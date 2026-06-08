@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+out/
+*.o
+*.exe
+.DS_Store
+.idea/
+.vscode/
+results/tours/
