@@ -1,0 +1,18 @@
+# Szybki test parsera TSPLIB i przeplywu wynikow.
+input_paths=data/tsplib
+reference_csv=data/reference/best_known.csv
+output_csv=results/sa_tsplib_smoke_results.csv
+summary_csv=results/sa_tsplib_smoke_summary.csv
+seed=12345
+repetitions=1
+max_iterations=20000
+time_limit_ms=200
+initial_temperature=1500.0
+minimum_temperature=0.001
+cooling_rate=0.995
+iterations_per_temperature=80
+initial_solution=nearest_neighbor
+neighborhood=two_opt
+use_held_karp_reference=false
+held_karp_max_n=16
+verbose=true

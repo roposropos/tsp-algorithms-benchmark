@@ -1,0 +1,11 @@
+n,graph_type,source_kind,instance_count,run_count,avg_time_ms,avg_relative_error_percent,avg_improvement_percent
+6,asymmetric,generated,3,15,18.321939,0.000000,10.218239
+6,symmetric,generated,3,15,17.285617,0.000000,4.767750
+7,asymmetric,generated,3,15,16.244733,0.000000,0.000000
+7,symmetric,generated,3,15,15.808906,0.000000,2.470954
+8,asymmetric,generated,3,15,14.947330,0.000000,0.000000
+8,symmetric,generated,3,15,15.043047,0.000000,4.584637
+9,asymmetric,generated,3,15,20.569067,0.000000,11.782672
+9,symmetric,generated,3,15,20.805814,0.000000,7.346176
+10,asymmetric,generated,3,15,19.676903,0.000000,1.523810
+10,symmetric,generated,3,15,19.729853,0.000000,0.427589
