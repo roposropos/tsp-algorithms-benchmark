@@ -1,0 +1,31 @@
+# Zadanie 1 - TSP - RAND / NN / RNN dla instancji TSPLIB
+# Uruchomienie:
+#   python3 zadanie1.py config_heuristics.txt
+#
+# Wymagane pliki wejściowe:
+#   data/tsplib/*.tsp      - instancje TSPLIB
+#   best_known_full.csv    - wartości optimum / best known
+#
+# Format pliku:
+#   klucz=wartość
+#   listy zapisuj po przecinku, bez nawiasów
+#   komentarze rozpoczynaj znakiem #
+#
+# Opis najważniejszych parametrów:
+#   mode            - tryb pracy: generated albo tsplib
+#   input_glob      - wzorzec ścieżek do plików .tsp
+#   algorithms      - lista algorytmów do uruchomienia
+#   rand_trials     - liczba losowych permutacji dla RAND
+#   timeout_seconds - limit czasu pojedynczego uruchomienia w sekundach
+#   best_known_csv  - plik CSV z optimum / best known
+#   output          - nazwa pliku CSV z wynikami
+#   seed            - ziarno generatora liczb losowych
+
+mode=tsplib
+input_glob=data/tsplib/*.tsp
+algorithms=rand,nn,rnn
+rand_trials=200
+timeout_seconds=10
+best_known_csv=best_known_full.csv
+output=heuristics_tsplib_fixed.csv
+seed=12345

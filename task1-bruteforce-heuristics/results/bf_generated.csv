@@ -1,0 +1,201 @@
+instance_name,source,family,n,symmetric,algorithm,seed,cost,best_known,rel_error_pct,time_s,completed,timed_out,route,extra
+gen_sym_n6_00,generated,generated_complete,6,True,bruteforce,12345,190559,,,0.0001585839781910181,True,False,0 3 5 2 1 4,{'checked_permutations': 120}
+gen_sym_n6_01,generated,generated_complete,6,True,bruteforce,12445,257888,,,0.000145458965562284,True,False,0 3 5 1 2 4,{'checked_permutations': 120}
+gen_sym_n6_02,generated,generated_complete,6,True,bruteforce,12545,258031,,,0.00014949997421354055,True,False,0 1 4 2 5 3,{'checked_permutations': 120}
+gen_sym_n6_03,generated,generated_complete,6,True,bruteforce,12645,116917,,,0.000145458965562284,True,False,0 1 4 2 3 5,{'checked_permutations': 120}
+gen_sym_n6_04,generated,generated_complete,6,True,bruteforce,12745,76565,,,0.0001455830642953515,True,False,0 1 5 2 3 4,{'checked_permutations': 120}
+gen_sym_n6_05,generated,generated_complete,6,True,bruteforce,12845,286539,,,0.00014595803804695606,True,False,0 1 3 4 5 2,{'checked_permutations': 120}
+gen_sym_n6_06,generated,generated_complete,6,True,bruteforce,12945,215023,,,0.00014537503011524677,True,False,0 1 3 4 5 2,{'checked_permutations': 120}
+gen_sym_n6_07,generated,generated_complete,6,True,bruteforce,13045,156021,,,0.00014641694724559784,True,False,0 1 5 2 3 4,{'checked_permutations': 120}
+gen_sym_n6_08,generated,generated_complete,6,True,bruteforce,13145,257910,,,0.00014925003051757812,True,False,0 1 4 3 5 2,{'checked_permutations': 120}
+gen_sym_n6_09,generated,generated_complete,6,True,bruteforce,13245,126647,,,0.00014424999244511127,True,False,0 1 3 4 5 2,{'checked_permutations': 120}
+gen_asym_n6_00,generated,generated_complete,6,False,bruteforce,13345,171169,,,0.0001449170522391796,True,False,0 5 3 1 4 2,{'checked_permutations': 120}
+gen_asym_n6_01,generated,generated_complete,6,False,bruteforce,13445,155316,,,0.00014441600069403648,True,False,0 3 5 1 4 2,{'checked_permutations': 120}
+gen_asym_n6_02,generated,generated_complete,6,False,bruteforce,13545,208344,,,0.00014512497000396252,True,False,0 4 5 3 2 1,{'checked_permutations': 120}
+gen_asym_n6_03,generated,generated_complete,6,False,bruteforce,13645,102167,,,0.00014520797412842512,True,False,0 4 5 1 2 3,{'checked_permutations': 120}
+gen_asym_n6_04,generated,generated_complete,6,False,bruteforce,13745,131582,,,0.00014400004874914885,True,False,0 2 3 5 4 1,{'checked_permutations': 120}
+gen_asym_n6_05,generated,generated_complete,6,False,bruteforce,13845,173720,,,0.00014633301179856062,True,False,0 3 1 4 5 2,{'checked_permutations': 120}
+gen_asym_n6_06,generated,generated_complete,6,False,bruteforce,13945,134043,,,0.0001462089130654931,True,False,0 4 5 2 3 1,{'checked_permutations': 120}
+gen_asym_n6_07,generated,generated_complete,6,False,bruteforce,14045,124779,,,0.00014595896936953068,True,False,0 5 3 1 2 4,{'checked_permutations': 120}
+gen_asym_n6_08,generated,generated_complete,6,False,bruteforce,14145,203396,,,0.00014625000767409801,True,False,0 4 3 1 5 2,{'checked_permutations': 120}
+gen_asym_n6_09,generated,generated_complete,6,False,bruteforce,14245,151390,,,0.00014595792163163424,True,False,0 3 5 1 2 4,{'checked_permutations': 120}
+gen_sym_n7_00,generated,generated_complete,7,True,bruteforce,14345,228781,,,0.0009373340290039778,True,False,0 2 4 1 3 6 5,{'checked_permutations': 720}
+gen_sym_n7_01,generated,generated_complete,7,True,bruteforce,14445,199892,,,0.0009535419521853328,True,False,0 1 2 3 6 4 5,{'checked_permutations': 720}
+gen_sym_n7_02,generated,generated_complete,7,True,bruteforce,14545,283513,,,0.0009429169585928321,True,False,0 1 4 3 5 2 6,{'checked_permutations': 720}
+gen_sym_n7_03,generated,generated_complete,7,True,bruteforce,14645,115997,,,0.0009312080219388008,True,False,0 2 5 6 1 4 3,{'checked_permutations': 720}
+gen_sym_n7_04,generated,generated_complete,7,True,bruteforce,14745,177393,,,0.0009374169167131186,True,False,0 1 5 3 6 2 4,{'checked_permutations': 720}
+gen_sym_n7_05,generated,generated_complete,7,True,bruteforce,14845,206478,,,0.0009282920509576797,True,False,0 2 6 1 3 5 4,{'checked_permutations': 720}
+gen_sym_n7_06,generated,generated_complete,7,True,bruteforce,14945,165303,,,0.0009314580820500851,True,False,0 1 2 4 5 3 6,{'checked_permutations': 720}
+gen_sym_n7_07,generated,generated_complete,7,True,bruteforce,15045,190178,,,0.0009352910565212369,True,False,0 3 2 6 5 1 4,{'checked_permutations': 720}
+gen_sym_n7_08,generated,generated_complete,7,True,bruteforce,15145,161282,,,0.0009480840526521206,True,False,0 1 3 5 4 6 2,{'checked_permutations': 720}
+gen_sym_n7_09,generated,generated_complete,7,True,bruteforce,15245,193881,,,0.0009307919535785913,True,False,0 2 4 6 3 1 5,{'checked_permutations': 720}
+gen_asym_n7_00,generated,generated_complete,7,False,bruteforce,15345,130601,,,0.0009299590019509196,True,False,0 4 2 6 3 5 1,{'checked_permutations': 720}
+gen_asym_n7_01,generated,generated_complete,7,False,bruteforce,15445,105192,,,0.0009301670361310244,True,False,0 2 5 3 6 4 1,{'checked_permutations': 720}
+gen_asym_n7_02,generated,generated_complete,7,False,bruteforce,15545,202422,,,0.0009317090734839439,True,False,0 4 3 5 1 6 2,{'checked_permutations': 720}
+gen_asym_n7_03,generated,generated_complete,7,False,bruteforce,15645,110587,,,0.0009345830185338855,True,False,0 6 2 1 5 3 4,{'checked_permutations': 720}
+gen_asym_n7_04,generated,generated_complete,7,False,bruteforce,15745,90592,,,0.0009326250292360783,True,False,0 1 3 6 5 2 4,{'checked_permutations': 720}
+gen_asym_n7_05,generated,generated_complete,7,False,bruteforce,15845,230225,,,0.0009471249068155885,True,False,0 3 2 5 1 6 4,{'checked_permutations': 720}
+gen_asym_n7_06,generated,generated_complete,7,False,bruteforce,15945,125992,,,0.0009341250406578183,True,False,0 3 5 2 4 6 1,{'checked_permutations': 720}
+gen_asym_n7_07,generated,generated_complete,7,False,bruteforce,16045,155427,,,0.0009376249508932233,True,False,0 6 3 1 2 5 4,{'checked_permutations': 720}
+gen_asym_n7_08,generated,generated_complete,7,False,bruteforce,16145,170863,,,0.0009352089837193489,True,False,0 3 2 6 4 5 1,{'checked_permutations': 720}
+gen_asym_n7_09,generated,generated_complete,7,False,bruteforce,16245,127753,,,0.0009452080121263862,True,False,0 4 6 5 1 2 3,{'checked_permutations': 720}
+gen_sym_n8_00,generated,generated_complete,8,True,bruteforce,16345,164755,,,0.006980374921113253,True,False,0 3 4 2 1 6 5 7,{'checked_permutations': 5040}
+gen_sym_n8_01,generated,generated_complete,8,True,bruteforce,16445,263641,,,0.007041290984489024,True,False,0 2 3 1 7 5 4 6,{'checked_permutations': 5040}
+gen_sym_n8_02,generated,generated_complete,8,True,bruteforce,16545,198612,,,0.007054249988868833,True,False,0 4 6 5 3 2 1 7,{'checked_permutations': 5040}
+gen_sym_n8_03,generated,generated_complete,8,True,bruteforce,16645,168914,,,0.007001541089266539,True,False,0 2 5 7 3 4 1 6,{'checked_permutations': 5040}
+gen_sym_n8_04,generated,generated_complete,8,True,bruteforce,16745,175399,,,0.007051207940094173,True,False,0 3 1 5 6 4 2 7,{'checked_permutations': 5040}
+gen_sym_n8_05,generated,generated_complete,8,True,bruteforce,16845,134451,,,0.007054415997117758,True,False,0 2 6 1 3 7 4 5,{'checked_permutations': 5040}
+gen_sym_n8_06,generated,generated_complete,8,True,bruteforce,16945,218852,,,0.007029458996839821,True,False,0 1 2 7 6 4 5 3,{'checked_permutations': 5040}
+gen_sym_n8_07,generated,generated_complete,8,True,bruteforce,17045,148283,,,0.00705604103859514,True,False,0 3 6 1 4 2 5 7,{'checked_permutations': 5040}
+gen_sym_n8_08,generated,generated_complete,8,True,bruteforce,17145,159701,,,0.007037624949589372,True,False,0 3 5 6 1 7 2 4,{'checked_permutations': 5040}
+gen_sym_n8_09,generated,generated_complete,8,True,bruteforce,17245,181570,,,0.007097791996784508,True,False,0 1 2 4 7 3 6 5,{'checked_permutations': 5040}
+gen_asym_n8_00,generated,generated_complete,8,False,bruteforce,17345,152720,,,0.007001542020589113,True,False,0 3 7 1 5 6 4 2,{'checked_permutations': 5040}
+gen_asym_n8_01,generated,generated_complete,8,False,bruteforce,17445,185763,,,0.007068165927194059,True,False,0 6 7 2 1 3 4 5,{'checked_permutations': 5040}
+gen_asym_n8_02,generated,generated_complete,8,False,bruteforce,17545,180437,,,0.007011416018940508,True,False,0 3 4 5 1 6 7 2,{'checked_permutations': 5040}
+gen_asym_n8_03,generated,generated_complete,8,False,bruteforce,17645,188704,,,0.007048666011542082,True,False,0 7 5 3 4 1 6 2,{'checked_permutations': 5040}
+gen_asym_n8_04,generated,generated_complete,8,False,bruteforce,17745,143202,,,0.007062875083647668,True,False,0 2 3 6 7 5 1 4,{'checked_permutations': 5040}
+gen_asym_n8_05,generated,generated_complete,8,False,bruteforce,17845,128685,,,0.006981457932852209,True,False,0 2 4 3 7 5 6 1,{'checked_permutations': 5040}
+gen_asym_n8_06,generated,generated_complete,8,False,bruteforce,17945,183059,,,0.007076583104208112,True,False,0 4 1 3 2 6 5 7,{'checked_permutations': 5040}
+gen_asym_n8_07,generated,generated_complete,8,False,bruteforce,18045,89148,,,0.007001291029155254,True,False,0 1 3 4 7 6 5 2,{'checked_permutations': 5040}
+gen_asym_n8_08,generated,generated_complete,8,False,bruteforce,18145,147035,,,0.007099875016137958,True,False,0 2 5 7 1 4 3 6,{'checked_permutations': 5040}
+gen_asym_n8_09,generated,generated_complete,8,False,bruteforce,18245,182323,,,0.007094666943885386,True,False,0 7 5 2 6 3 4 1,{'checked_permutations': 5040}
+gen_sym_n9_00,generated,generated_complete,9,True,bruteforce,18345,123270,,,0.05927716591395438,True,False,0 1 2 4 7 5 6 3 8,{'checked_permutations': 40320}
+gen_sym_n9_01,generated,generated_complete,9,True,bruteforce,18445,206194,,,0.05927520804107189,True,False,0 1 7 3 8 2 6 5 4,{'checked_permutations': 40320}
+gen_sym_n9_02,generated,generated_complete,9,True,bruteforce,18545,178904,,,0.059477875009179115,True,False,0 2 4 1 8 7 3 6 5,{'checked_permutations': 40320}
+gen_sym_n9_03,generated,generated_complete,9,True,bruteforce,18645,204056,,,0.05953462503384799,True,False,0 2 3 5 1 8 4 6 7,{'checked_permutations': 40320}
+gen_sym_n9_04,generated,generated_complete,9,True,bruteforce,18745,165432,,,0.05918016599025577,True,False,0 3 1 2 6 5 7 8 4,{'checked_permutations': 40320}
+gen_sym_n9_05,generated,generated_complete,9,True,bruteforce,18845,120709,,,0.05931762501131743,True,False,0 3 8 1 4 6 2 5 7,{'checked_permutations': 40320}
+gen_sym_n9_06,generated,generated_complete,9,True,bruteforce,18945,198775,,,0.059440040960907936,True,False,0 3 7 4 8 6 1 2 5,{'checked_permutations': 40320}
+gen_sym_n9_07,generated,generated_complete,9,True,bruteforce,19045,174113,,,0.0591671250294894,True,False,0 1 3 6 5 2 4 8 7,{'checked_permutations': 40320}
+gen_sym_n9_08,generated,generated_complete,9,True,bruteforce,19145,172421,,,0.059160833014175296,True,False,0 3 5 7 1 8 2 4 6,{'checked_permutations': 40320}
+gen_sym_n9_09,generated,generated_complete,9,True,bruteforce,19245,123814,,,0.0593194579705596,True,False,0 2 8 6 3 7 5 1 4,{'checked_permutations': 40320}
+gen_asym_n9_00,generated,generated_complete,9,False,bruteforce,19345,264204,,,0.059557334054261446,True,False,0 1 7 5 6 8 4 3 2,{'checked_permutations': 40320}
+gen_asym_n9_01,generated,generated_complete,9,False,bruteforce,19445,156669,,,0.05934991699177772,True,False,0 3 7 4 1 8 6 2 5,{'checked_permutations': 40320}
+gen_asym_n9_02,generated,generated_complete,9,False,bruteforce,19545,134464,,,0.05933312501292676,True,False,0 8 3 6 1 7 2 5 4,{'checked_permutations': 40320}
+gen_asym_n9_03,generated,generated_complete,9,False,bruteforce,19645,177444,,,0.05910700000822544,True,False,0 2 8 5 3 4 1 6 7,{'checked_permutations': 40320}
+gen_asym_n9_04,generated,generated_complete,9,False,bruteforce,19745,112468,,,0.059297375031746924,True,False,0 4 3 1 6 2 7 5 8,{'checked_permutations': 40320}
+gen_asym_n9_05,generated,generated_complete,9,False,bruteforce,19845,119190,,,0.05919891700614244,True,False,0 3 2 7 8 6 4 5 1,{'checked_permutations': 40320}
+gen_asym_n9_06,generated,generated_complete,9,False,bruteforce,19945,210051,,,0.05919812491629273,True,False,0 1 2 7 8 3 6 4 5,{'checked_permutations': 40320}
+gen_asym_n9_07,generated,generated_complete,9,False,bruteforce,20045,143571,,,0.05917720799334347,True,False,0 4 6 2 1 7 3 8 5,{'checked_permutations': 40320}
+gen_asym_n9_08,generated,generated_complete,9,False,bruteforce,20145,127702,,,0.05930412502493709,True,False,0 7 6 3 1 2 8 4 5,{'checked_permutations': 40320}
+gen_asym_n9_09,generated,generated_complete,9,False,bruteforce,20245,109042,,,0.05923974991310388,True,False,0 8 2 1 6 7 5 3 4,{'checked_permutations': 40320}
+gen_sym_n10_00,generated,generated_complete,10,True,bruteforce,20345,239236,,,0.5642852910095826,True,False,0 5 6 4 2 9 1 3 8 7,{'checked_permutations': 362880}
+gen_sym_n10_01,generated,generated_complete,10,True,bruteforce,20445,233617,,,0.5629138749791309,True,False,0 2 5 7 3 9 1 6 8 4,{'checked_permutations': 362880}
+gen_sym_n10_02,generated,generated_complete,10,True,bruteforce,20545,152274,,,0.5647355420514941,True,False,0 6 4 5 7 3 8 2 1 9,{'checked_permutations': 362880}
+gen_sym_n10_03,generated,generated_complete,10,True,bruteforce,20645,249081,,,0.5628811659989879,True,False,0 4 3 2 8 7 6 5 1 9,{'checked_permutations': 362880}
+gen_sym_n10_04,generated,generated_complete,10,True,bruteforce,20745,121032,,,0.5632601670222357,True,False,0 6 9 2 4 5 1 8 3 7,{'checked_permutations': 362880}
+gen_sym_n10_05,generated,generated_complete,10,True,bruteforce,20845,199680,,,0.5633785000536591,True,False,0 4 7 9 2 6 8 3 1 5,{'checked_permutations': 362880}
+gen_sym_n10_06,generated,generated_complete,10,True,bruteforce,20945,80502,,,0.5611197920516133,True,False,0 6 7 9 2 3 5 4 1 8,{'checked_permutations': 362880}
+gen_sym_n10_07,generated,generated_complete,10,True,bruteforce,21045,218610,,,0.5616021250607446,True,False,0 6 8 1 2 4 5 3 9 7,{'checked_permutations': 362880}
+gen_sym_n10_08,generated,generated_complete,10,True,bruteforce,21145,209366,,,0.5606586670037359,True,False,0 3 7 1 6 8 2 5 4 9,{'checked_permutations': 362880}
+gen_sym_n10_09,generated,generated_complete,10,True,bruteforce,21245,161233,,,0.5621300000930205,True,False,0 5 7 8 1 9 4 3 2 6,{'checked_permutations': 362880}
+gen_asym_n10_00,generated,generated_complete,10,False,bruteforce,21345,192499,,,0.5615087919868529,True,False,0 4 9 3 1 6 2 8 5 7,{'checked_permutations': 362880}
+gen_asym_n10_01,generated,generated_complete,10,False,bruteforce,21445,166261,,,0.562551791081205,True,False,0 4 9 5 2 8 7 6 3 1,{'checked_permutations': 362880}
+gen_asym_n10_02,generated,generated_complete,10,False,bruteforce,21545,169532,,,0.5717110409168527,True,False,0 9 4 8 2 6 3 5 7 1,{'checked_permutations': 362880}
+gen_asym_n10_03,generated,generated_complete,10,False,bruteforce,21645,168856,,,0.5645992499776185,True,False,0 9 2 7 1 3 6 4 5 8,{'checked_permutations': 362880}
+gen_asym_n10_04,generated,generated_complete,10,False,bruteforce,21745,155559,,,0.5651939169038087,True,False,0 4 2 3 5 1 9 6 8 7,{'checked_permutations': 362880}
+gen_asym_n10_05,generated,generated_complete,10,False,bruteforce,21845,160491,,,0.5651821669889614,True,False,0 9 8 3 4 1 6 5 7 2,{'checked_permutations': 362880}
+gen_asym_n10_06,generated,generated_complete,10,False,bruteforce,21945,161455,,,0.5642366670072079,True,False,0 7 3 1 8 4 5 2 9 6,{'checked_permutations': 362880}
+gen_asym_n10_07,generated,generated_complete,10,False,bruteforce,22045,173566,,,0.5644507909892127,True,False,0 1 4 9 7 5 3 6 2 8,{'checked_permutations': 362880}
+gen_asym_n10_08,generated,generated_complete,10,False,bruteforce,22145,193210,,,0.5660171250347048,True,False,0 9 5 2 3 1 7 4 8 6,{'checked_permutations': 362880}
+gen_asym_n10_09,generated,generated_complete,10,False,bruteforce,22245,166514,,,0.5638421250041574,True,False,0 2 8 4 9 7 6 5 1 3,{'checked_permutations': 362880}
+gen_sym_n11_00,generated,generated_complete,11,True,bruteforce,22345,137490,,,5.000048708054237,False,True,0 3 10 2 1 9 5 8 7 4 6,{'checked_permutations': 3057407}
+gen_sym_n11_01,generated,generated_complete,11,True,bruteforce,22445,315975,,,5.000028166919947,False,True,0 2 10 3 8 6 9 1 4 7 5,{'checked_permutations': 3065548}
+gen_sym_n11_02,generated,generated_complete,11,True,bruteforce,22545,162904,,,5.000021541956812,False,True,0 3 6 4 5 8 1 2 7 9 10,{'checked_permutations': 3059838}
+gen_sym_n11_03,generated,generated_complete,11,True,bruteforce,22645,132598,,,5.000014959019609,False,True,0 4 2 3 7 10 9 1 8 6 5,{'checked_permutations': 3038464}
+gen_sym_n11_04,generated,generated_complete,11,True,bruteforce,22745,183486,,,5.000021041021682,False,True,0 8 6 3 1 2 7 10 4 5 9,{'checked_permutations': 3065747}
+gen_sym_n11_05,generated,generated_complete,11,True,bruteforce,22845,248206,,,5.000007958034985,False,True,0 8 9 1 2 4 5 6 3 7 10,{'checked_permutations': 3062183}
+gen_sym_n11_06,generated,generated_complete,11,True,bruteforce,22945,162974,,,5.000021458952688,False,True,0 2 3 6 10 1 7 8 5 4 9,{'checked_permutations': 3063614}
+gen_sym_n11_07,generated,generated_complete,11,True,bruteforce,23045,152555,,,5.0000201660441235,False,True,0 3 1 2 5 8 7 6 10 9 4,{'checked_permutations': 3062249}
+gen_sym_n11_08,generated,generated_complete,11,True,bruteforce,23145,172144,,,5.000021749990992,False,True,0 3 1 5 6 2 4 9 10 8 7,{'checked_permutations': 3063423}
+gen_sym_n11_09,generated,generated_complete,11,True,bruteforce,23245,203715,,,5.000006999936886,False,True,0 2 8 6 9 4 5 3 7 1 10,{'checked_permutations': 3065292}
+gen_asym_n11_00,generated,generated_complete,11,False,bruteforce,23345,198657,,,5.000039416947402,False,True,0 8 1 7 5 2 9 4 3 10 6,{'checked_permutations': 3067109}
+gen_asym_n11_01,generated,generated_complete,11,False,bruteforce,23445,168770,,,5.000022292020731,False,True,0 3 5 4 1 8 6 9 10 2 7,{'checked_permutations': 3062111}
+gen_asym_n11_02,generated,generated_complete,11,False,bruteforce,23545,177920,,,5.0000103750498965,False,True,0 3 7 5 2 9 4 8 6 10 1,{'checked_permutations': 3067463}
+gen_asym_n11_03,generated,generated_complete,11,False,bruteforce,23645,167761,,,5.000013999990188,False,True,0 6 7 3 2 4 1 9 10 5 8,{'checked_permutations': 3066056}
+gen_asym_n11_04,generated,generated_complete,11,False,bruteforce,23745,160655,,,5.00002829101868,False,True,0 4 1 9 3 2 7 5 10 6 8,{'checked_permutations': 3064133}
+gen_asym_n11_05,generated,generated_complete,11,False,bruteforce,23845,119935,,,5.000010542105883,False,True,0 7 3 8 1 9 10 6 2 5 4,{'checked_permutations': 3064629}
+gen_asym_n11_06,generated,generated_complete,11,False,bruteforce,23945,188522,,,5.000022124964744,False,True,0 4 8 9 7 6 10 3 2 5 1,{'checked_permutations': 3066778}
+gen_asym_n11_07,generated,generated_complete,11,False,bruteforce,24045,213950,,,5.000020707957447,False,True,0 7 2 4 3 8 6 1 9 10 5,{'checked_permutations': 3066897}
+gen_asym_n11_08,generated,generated_complete,11,False,bruteforce,24145,84648,,,5.000020749983378,False,True,0 6 2 10 7 1 5 9 3 8 4,{'checked_permutations': 3063251}
+gen_asym_n11_09,generated,generated_complete,11,False,bruteforce,24245,158314,,,5.000020832987502,False,True,0 3 6 8 1 4 9 7 10 2 5,{'checked_permutations': 3064980}
+gen_sym_n12_00,generated,generated_complete,12,True,bruteforce,24345,213120,,,5.000001625041477,False,True,0 1 4 5 7 2 6 10 3 8 9 11,{'checked_permutations': 2897923}
+gen_sym_n12_01,generated,generated_complete,12,True,bruteforce,24445,259296,,,5.000001750071533,False,True,0 1 8 4 6 2 7 10 3 5 11 9,{'checked_permutations': 2904407}
+gen_sym_n12_02,generated,generated_complete,12,True,bruteforce,24545,236306,,,5.00002004194539,False,True,0 1 7 3 2 11 10 5 9 8 4 6,{'checked_permutations': 2904765}
+gen_sym_n12_03,generated,generated_complete,12,True,bruteforce,24645,273956,,,5.00000662507955,False,True,0 1 9 2 10 3 8 11 4 5 7 6,{'checked_permutations': 2901524}
+gen_sym_n12_04,generated,generated_complete,12,True,bruteforce,24745,184644,,,5.000021125073545,False,True,0 1 6 5 2 4 3 10 8 11 7 9,{'checked_permutations': 2901748}
+gen_sym_n12_05,generated,generated_complete,12,True,bruteforce,24845,282231,,,5.000014333054423,False,True,0 1 8 7 5 6 3 2 11 4 9 10,{'checked_permutations': 2533371}
+gen_sym_n12_06,generated,generated_complete,12,True,bruteforce,24945,153187,,,5.000001583015546,False,True,0 1 3 10 7 9 11 6 4 2 8 5,{'checked_permutations': 2730324}
+gen_sym_n12_07,generated,generated_complete,12,True,bruteforce,25045,300770,,,5.000015415949747,False,True,0 1 6 3 10 4 9 11 2 5 8 7,{'checked_permutations': 2553037}
+gen_sym_n12_08,generated,generated_complete,12,True,bruteforce,25145,286091,,,5.0000374160008505,False,True,0 1 7 2 4 10 8 11 5 9 6 3,{'checked_permutations': 1839571}
+gen_sym_n12_09,generated,generated_complete,12,True,bruteforce,25245,298965,,,5.00003574998118,False,True,0 1 2 3 7 4 8 10 9 11 6 5,{'checked_permutations': 829671}
+gen_asym_n12_00,generated,generated_complete,12,False,bruteforce,25345,226409,,,5.000018124934286,False,True,0 1 6 8 2 11 4 9 5 7 3 10,{'checked_permutations': 2432730}
+gen_asym_n12_01,generated,generated_complete,12,False,bruteforce,25445,237019,,,5.00002012506593,False,True,0 1 5 10 6 2 11 4 8 3 7 9,{'checked_permutations': 2855429}
+gen_asym_n12_02,generated,generated_complete,12,False,bruteforce,25545,86153,,,5.000009624985978,False,True,0 1 5 11 2 7 4 6 10 3 9 8,{'checked_permutations': 2855597}
+gen_asym_n12_03,generated,generated_complete,12,False,bruteforce,25645,259322,,,5.0000212501036,False,True,0 1 7 6 5 8 3 9 2 4 10 11,{'checked_permutations': 2490029}
+gen_asym_n12_04,generated,generated_complete,12,False,bruteforce,25745,207348,,,5.000001624925062,False,True,0 1 3 7 2 8 9 5 10 6 11 4,{'checked_permutations': 2229601}
+gen_asym_n12_05,generated,generated_complete,12,False,bruteforce,25845,156664,,,5.000018584076315,False,True,0 1 5 7 10 2 4 8 9 11 3 6,{'checked_permutations': 2364118}
+gen_asym_n12_06,generated,generated_complete,12,False,bruteforce,25945,286221,,,5.0000073339324445,False,True,0 1 5 8 11 10 2 4 6 7 3 9,{'checked_permutations': 2352640}
+gen_asym_n12_07,generated,generated_complete,12,False,bruteforce,26045,186943,,,5.000021415995434,False,True,0 1 2 8 4 3 9 5 11 7 10 6,{'checked_permutations': 2551757}
+gen_asym_n12_08,generated,generated_complete,12,False,bruteforce,26145,246770,,,5.000001500011422,False,True,0 1 7 5 2 10 9 11 8 3 6 4,{'checked_permutations': 2617914}
+gen_asym_n12_09,generated,generated_complete,12,False,bruteforce,26245,246548,,,5.000041124993004,False,True,0 1 2 7 5 11 8 4 10 9 6 3,{'checked_permutations': 2856494}
+gen_sym_n13_00,generated,generated_complete,13,True,bruteforce,26345,265037,,,5.000016333069652,False,True,0 1 2 7 8 12 11 9 5 10 6 3 4,{'checked_permutations': 2756300}
+gen_sym_n13_01,generated,generated_complete,13,True,bruteforce,26445,279485,,,5.000020875013433,False,True,0 1 2 6 7 12 5 3 4 9 11 10 8,{'checked_permutations': 2760722}
+gen_sym_n13_02,generated,generated_complete,13,True,bruteforce,26545,287922,,,5.000020707957447,False,True,0 1 2 8 6 7 10 11 12 3 9 5 4,{'checked_permutations': 2765916}
+gen_sym_n13_03,generated,generated_complete,13,True,bruteforce,26645,186238,,,5.000007541966625,False,True,0 1 2 6 9 8 7 12 11 4 3 5 10,{'checked_permutations': 2763894}
+gen_sym_n13_04,generated,generated_complete,13,True,bruteforce,26745,303579,,,5.000020917039365,False,True,0 1 2 7 11 12 6 10 3 8 5 9 4,{'checked_permutations': 2747342}
+gen_sym_n13_05,generated,generated_complete,13,True,bruteforce,26845,247273,,,5.0000019170111045,False,True,0 1 2 4 8 10 9 3 7 5 12 6 11,{'checked_permutations': 2744554}
+gen_sym_n13_06,generated,generated_complete,13,True,bruteforce,26945,353443,,,5.0000294169876724,False,True,0 1 2 7 10 8 6 12 11 9 5 3 4,{'checked_permutations': 2647784}
+gen_sym_n13_07,generated,generated_complete,13,True,bruteforce,27045,417358,,,5.00000604102388,False,True,0 1 2 7 12 11 5 6 9 10 3 4 8,{'checked_permutations': 2748952}
+gen_sym_n13_08,generated,generated_complete,13,True,bruteforce,27145,223052,,,5.000002374988981,False,True,0 1 2 7 9 8 6 11 4 12 10 5 3,{'checked_permutations': 2755448}
+gen_sym_n13_09,generated,generated_complete,13,True,bruteforce,27245,348569,,,5.0000030000228435,False,True,0 1 2 8 3 7 10 4 9 5 6 11 12,{'checked_permutations': 2761702}
+gen_asym_n13_00,generated,generated_complete,13,False,bruteforce,27345,295905,,,5.000021749990992,False,True,0 1 2 9 11 4 3 12 7 5 6 10 8,{'checked_permutations': 2756474}
+gen_asym_n13_01,generated,generated_complete,13,False,bruteforce,27445,280004,,,5.00000787503086,False,True,0 1 2 8 3 7 5 10 12 4 9 6 11,{'checked_permutations': 2728530}
+gen_asym_n13_02,generated,generated_complete,13,False,bruteforce,27545,145359,,,5.000022375024855,False,True,0 1 2 10 3 7 4 8 5 6 12 11 9,{'checked_permutations': 2760788}
+gen_asym_n13_03,generated,generated_complete,13,False,bruteforce,27645,177685,,,5.000022583990358,False,True,0 1 2 4 8 6 12 9 7 10 5 11 3,{'checked_permutations': 2762500}
+gen_asym_n13_04,generated,generated_complete,13,False,bruteforce,27745,185692,,,5.000001624925062,False,True,0 1 2 6 11 4 9 7 12 3 5 10 8,{'checked_permutations': 2761970}
+gen_asym_n13_05,generated,generated_complete,13,False,bruteforce,27845,170796,,,5.000012082979083,False,True,0 1 2 6 4 10 7 3 8 5 12 11 9,{'checked_permutations': 2702272}
+gen_asym_n13_06,generated,generated_complete,13,False,bruteforce,27945,249512,,,5.0000107089290395,False,True,0 1 2 4 9 10 8 11 3 7 6 5 12,{'checked_permutations': 2660341}
+gen_asym_n13_07,generated,generated_complete,13,False,bruteforce,28045,278811,,,5.000002791988663,False,True,0 1 2 7 9 3 5 6 11 12 4 10 8,{'checked_permutations': 2732273}
+gen_asym_n13_08,generated,generated_complete,13,False,bruteforce,28145,231008,,,5.00002245802898,False,True,0 1 2 10 4 9 12 5 3 6 11 7 8,{'checked_permutations': 2763186}
+gen_asym_n13_09,generated,generated_complete,13,False,bruteforce,28245,219231,,,5.0000290418975055,False,True,0 1 2 6 5 8 12 4 7 11 10 9 3,{'checked_permutations': 2760781}
+gen_sym_n14_00,generated,generated_complete,14,True,bruteforce,28345,411987,,,5.000022290972993,False,True,0 1 2 3 9 4 5 11 10 8 6 12 13 7,{'checked_permutations': 2628242}
+gen_sym_n14_01,generated,generated_complete,14,True,bruteforce,28445,359492,,,5.000027125002816,False,True,0 1 2 3 10 6 9 11 8 4 12 5 7 13,{'checked_permutations': 2612223}
+gen_sym_n14_02,generated,generated_complete,14,True,bruteforce,28545,263119,,,5.000021583982743,False,True,0 1 2 3 9 4 6 8 5 7 13 12 11 10,{'checked_permutations': 2628683}
+gen_sym_n14_03,generated,generated_complete,14,True,bruteforce,28645,313330,,,5.000012916047126,False,True,0 1 2 3 4 8 9 7 12 6 5 13 10 11,{'checked_permutations': 2606966}
+gen_sym_n14_04,generated,generated_complete,14,True,bruteforce,28745,358452,,,5.000014957971871,False,True,0 1 2 3 4 12 7 5 6 11 10 9 13 8,{'checked_permutations': 2627315}
+gen_sym_n14_05,generated,generated_complete,14,True,bruteforce,28845,277349,,,5.000044125015847,False,True,0 1 2 3 8 12 5 7 6 11 9 4 10 13,{'checked_permutations': 2545742}
+gen_sym_n14_06,generated,generated_complete,14,True,bruteforce,28945,392725,,,5.000021834042855,False,True,0 1 2 3 7 6 8 13 9 5 10 12 4 11,{'checked_permutations': 2625920}
+gen_sym_n14_07,generated,generated_complete,14,True,bruteforce,29045,315663,,,5.000010999967344,False,True,0 1 2 3 8 11 4 7 5 13 9 10 6 12,{'checked_permutations': 2629772}
+gen_sym_n14_08,generated,generated_complete,14,True,bruteforce,29145,347510,,,5.000021749990992,False,True,0 1 2 3 11 4 9 6 10 7 5 12 13 8,{'checked_permutations': 2622056}
+gen_sym_n14_09,generated,generated_complete,14,True,bruteforce,29245,430514,,,5.0000018330756575,False,True,0 1 2 3 5 12 4 9 13 10 11 7 6 8,{'checked_permutations': 2628986}
+gen_asym_n14_00,generated,generated_complete,14,False,bruteforce,29345,300111,,,5.000015625031665,False,True,0 1 2 3 9 6 8 10 12 13 5 4 11 7,{'checked_permutations': 2650038}
+gen_asym_n14_01,generated,generated_complete,14,False,bruteforce,29445,333668,,,5.000020624953322,False,True,0 1 2 3 6 7 12 4 8 11 9 5 10 13,{'checked_permutations': 2630006}
+gen_asym_n14_02,generated,generated_complete,14,False,bruteforce,29545,339477,,,5.000021249987185,False,True,0 1 2 3 6 10 4 8 7 12 9 5 11 13,{'checked_permutations': 2617457}
+gen_asym_n14_03,generated,generated_complete,14,False,bruteforce,29645,337602,,,5.000006249989383,False,True,0 1 2 3 10 11 7 8 4 13 5 12 6 9,{'checked_permutations': 2627154}
+gen_asym_n14_04,generated,generated_complete,14,False,bruteforce,29745,261659,,,5.0790150839602575,False,True,0 1 2 3 8 6 11 10 9 5 12 7 4 13,{'checked_permutations': 2618526}
+gen_asym_n14_05,generated,generated_complete,14,False,bruteforce,29845,290273,,,5.000016832957044,False,True,0 1 2 3 4 5 11 13 7 6 9 12 10 8,{'checked_permutations': 2594262}
+gen_asym_n14_06,generated,generated_complete,14,False,bruteforce,29945,317452,,,5.000006875023246,False,True,0 1 2 3 6 8 12 5 9 4 11 10 7 13,{'checked_permutations': 2628054}
+gen_asym_n14_07,generated,generated_complete,14,False,bruteforce,30045,371733,,,5.000001541920938,False,True,0 1 2 3 10 9 6 12 13 7 5 11 4 8,{'checked_permutations': 2626377}
+gen_asym_n14_08,generated,generated_complete,14,False,bruteforce,30145,286930,,,5.000011874944903,False,True,0 1 2 3 9 12 6 8 10 5 4 13 7 11,{'checked_permutations': 2627535}
+gen_asym_n14_09,generated,generated_complete,14,False,bruteforce,30245,363914,,,5.000002666958608,False,True,0 1 2 3 4 7 12 10 5 6 8 13 9 11,{'checked_permutations': 2625297}
+gen_sym_n15_00,generated,generated_complete,15,True,bruteforce,30345,439906,,,5.000021832995117,False,True,0 1 2 3 4 10 6 13 5 7 11 14 8 9 12,{'checked_permutations': 2483908}
+gen_sym_n15_01,generated,generated_complete,15,True,bruteforce,30445,396248,,,5.000020207953639,False,True,0 1 2 3 4 11 8 10 14 5 12 6 9 13 7,{'checked_permutations': 2489869}
+gen_sym_n15_02,generated,generated_complete,15,True,bruteforce,30545,436615,,,5.000012667034753,False,True,0 1 2 3 4 10 6 13 9 7 8 12 5 14 11,{'checked_permutations': 2484522}
+gen_sym_n15_03,generated,generated_complete,15,True,bruteforce,30645,358216,,,5.000021667103283,False,True,0 1 2 3 4 10 5 11 13 7 8 9 12 6 14,{'checked_permutations': 2489377}
+gen_sym_n15_04,generated,generated_complete,15,True,bruteforce,30745,427934,,,5.00004308403004,False,True,0 1 2 3 4 8 7 11 14 9 6 10 5 12 13,{'checked_permutations': 2406697}
+gen_sym_n15_05,generated,generated_complete,15,True,bruteforce,30845,470894,,,5.0000211669830605,False,True,0 1 2 3 4 8 14 7 12 9 13 5 11 10 6,{'checked_permutations': 2488122}
+gen_sym_n15_06,generated,generated_complete,15,True,bruteforce,30945,331260,,,5.000021249987185,False,True,0 1 2 3 4 7 9 14 13 8 11 5 12 10 6,{'checked_permutations': 2487572}
+gen_sym_n15_07,generated,generated_complete,15,True,bruteforce,31045,377273,,,5.0000200000358745,False,True,0 1 2 3 4 9 5 7 11 6 13 10 12 8 14,{'checked_permutations': 2468002}
+gen_sym_n15_08,generated,generated_complete,15,True,bruteforce,31145,392043,,,5.000020792009309,False,True,0 1 2 3 4 7 13 6 12 14 8 5 11 10 9,{'checked_permutations': 2489942}
+gen_sym_n15_09,generated,generated_complete,15,True,bruteforce,31245,287294,,,5.0000204999232665,False,True,0 1 2 3 4 9 10 7 8 5 12 6 14 13 11,{'checked_permutations': 2490158}
+gen_asym_n15_00,generated,generated_complete,15,False,bruteforce,31345,259816,,,5.000037375022657,False,True,0 1 2 3 4 10 9 11 12 5 13 8 6 7 14,{'checked_permutations': 2484096}
+gen_asym_n15_01,generated,generated_complete,15,False,bruteforce,31445,375481,,,5.0000214169267565,False,True,0 1 2 3 4 7 11 14 13 10 9 12 8 5 6,{'checked_permutations': 2490520}
+gen_asym_n15_02,generated,generated_complete,15,False,bruteforce,31545,296252,,,5.000032499898225,False,True,0 1 2 3 4 8 7 13 10 11 12 5 14 9 6,{'checked_permutations': 2481201}
+gen_asym_n15_03,generated,generated_complete,15,False,bruteforce,31645,443665,,,5.00000470795203,False,True,0 1 2 3 4 11 7 13 5 6 9 8 12 10 14,{'checked_permutations': 2341740}
+gen_asym_n15_04,generated,generated_complete,15,False,bruteforce,31745,372797,,,5.000021958956495,False,True,0 1 2 3 4 9 7 13 6 8 10 5 14 12 11,{'checked_permutations': 2374836}
+gen_asym_n15_05,generated,generated_complete,15,False,bruteforce,31845,249821,,,5.000002166023478,False,True,0 1 2 3 4 8 12 5 7 6 9 14 13 10 11,{'checked_permutations': 2489239}
+gen_asym_n15_06,generated,generated_complete,15,False,bruteforce,31945,389442,,,5.000008124974556,False,True,0 1 2 3 4 5 12 8 10 7 13 11 9 6 14,{'checked_permutations': 2489923}
+gen_asym_n15_07,generated,generated_complete,15,False,bruteforce,32045,238433,,,5.000016791047528,False,True,0 1 2 3 4 9 14 7 10 11 8 5 13 6 12,{'checked_permutations': 2486201}
+gen_asym_n15_08,generated,generated_complete,15,False,bruteforce,32145,257619,,,5.000021917046979,False,True,0 1 2 3 4 8 5 9 11 7 6 10 12 13 14,{'checked_permutations': 2490303}
+gen_asym_n15_09,generated,generated_complete,15,False,bruteforce,32245,295138,,,5.000000708037987,False,True,0 1 2 3 4 9 7 6 11 13 5 14 8 10 12,{'checked_permutations': 2467092}
