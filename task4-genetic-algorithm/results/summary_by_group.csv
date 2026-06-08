@@ -1,0 +1,4 @@
+kind,instances,min_n,max_n,mean_gap_percent,max_gap_percent,mean_elapsed_ms,worst_instance,all_thresholds_ok
+ASYM,5,34,323,8.203829333333333,13.273002,1487.9618666666668,rbg323,True
+SYM,13,14,2392,1.744914871794872,10.090416,1783.4233076923076,pr2392,True
+VLSI,10,131,2308,3.5051481,9.860998,2861.7661,djc1785,True

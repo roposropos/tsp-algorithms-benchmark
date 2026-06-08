@@ -1,0 +1,10 @@
+# label,path,opt,kind,source
+# Krotki zestaw do strojenia: obejmuje pierwsze dwa progi, ATSP i VLSI.
+burma14,data/tsplib/burma14.tsp,3323,SYM,TSPLIB
+ulysses22,data/tsplib/ulysses22.tsp,7013,SYM,TSPLIB
+berlin52,data/tsplib/berlin52.tsp,7542,SYM,TSPLIB
+eil76,data/tsplib/eil76.tsp,538,SYM,TSPLIB
+ftv33,data/tsplib/ftv33.atsp,1286,ASYM,TSPLIB_ATSP
+ft53,data/tsplib/ft53.atsp,6905,ASYM,TSPLIB_ATSP
+xqf131,data/vlsi/xqf131.tsp,564,VLSI,Waterloo_VLSI
+xqg237,data/vlsi/xqg237.tsp,1019,VLSI,Waterloo_VLSI
