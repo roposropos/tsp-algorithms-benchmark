@@ -1,0 +1,16 @@
+# Config for Task 2 - Branch and Bound TSP
+# instance    - path to instance file
+# mode        - bfs / dfs / lc
+# start_city  - starting city index
+# time_limit_s - time limit in seconds
+# use_nn_ub   - true/false, whether to initialize UB with nearest-neighbor result
+# save_csv    - true/false
+# csv_path    - path for result CSV
+
+instance=example_matrix.txt
+mode=lc
+start_city=0
+time_limit_s=60
+use_nn_ub=false
+save_csv=true
+csv_path=result_task2.csv
