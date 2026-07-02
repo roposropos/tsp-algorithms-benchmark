@@ -1,0 +1,5 @@
+# label,path,opt,kind,source
+burma14,data/tsplib/burma14.tsp,3323,SYM,TSPLIB
+ftv33,data/tsplib/ftv33.atsp,1286,ASYM,TSPLIB_ATSP
+xqf131,data/vlsi/xqf131.tsp,564,VLSI,Waterloo_VLSI
+
