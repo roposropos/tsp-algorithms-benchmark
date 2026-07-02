@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">C++ smoke verification for TSP Algorithms Benchmark</title>
+  <desc id="desc">A GitHub README verification panel showing that all four C++ benchmark stages pass smoke tests.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0913"/>
+      <stop offset="0.55" stop-color="#171026"/>
+      <stop offset="1" stop-color="#24143B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="520" rx="28" fill="url(#bg)"/>
+  <path d="M0 94 H1200" stroke="#2E2442" stroke-width="1"/>
+  <path d="M0 414 H1200" stroke="#2E2442" stroke-width="1"/>
+  <g opacity="0.34" stroke="#2E2442" stroke-width="1">
+    <path d="M80 0 V520"/>
+    <path d="M240 0 V520"/>
+    <path d="M400 0 V520"/>
+    <path d="M560 0 V520"/>
+    <path d="M720 0 V520"/>
+    <path d="M880 0 V520"/>
+    <path d="M1040 0 V520"/>
+    <path d="M0 174 H1200"/>
+    <path d="M0 254 H1200"/>
+    <path d="M0 334 H1200"/>
+  </g>
+
+  <text x="60" y="72" fill="#FFFFFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="800">TSP Algorithms Benchmark</text>
+  <text x="60" y="112" fill="#C4B5FD" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600">C++ smoke verification snapshot</text>
+  <g transform="translate(910 48)">
+    <rect width="220" height="44" rx="8" fill="url(#accent)"/>
+    <text x="110" y="29" text-anchor="middle" fill="#FFFFFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="800">make smoke passed</text>
+  </g>
+
+  <g transform="translate(60 155)" filter="url(#shadow)">
+    <rect width="255" height="205" rx="14" fill="#181225" stroke="#4C3B68"/>
+    <rect x="20" y="20" width="46" height="46" rx="10" fill="#2D1B4E"/>
+    <text x="43" y="50" text-anchor="middle" fill="#C4B5FD" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="800">1</text>
+    <text x="80" y="39" fill="#FFFFFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="800">Exact + heuristics</text>
+    <text x="80" y="66" fill="#C8C2D6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Brute force, NN, RNN</text>
+    <path d="M20 91 H235" stroke="#352947"/>
+    <text x="20" y="124" fill="#A78BFA" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700">C++17</text>
+    <text x="20" y="153" fill="#E7E2F4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Generated n=6-7</text>
+    <text x="20" y="181" fill="#22C55E" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800">PASS</text>
+  </g>
+
+  <g transform="translate(335 155)" filter="url(#shadow)">
+    <rect width="255" height="205" rx="14" fill="#181225" stroke="#4C3B68"/>
+    <rect x="20" y="20" width="46" height="46" rx="10" fill="#2D1B4E"/>
+    <text x="43" y="50" text-anchor="middle" fill="#C4B5FD" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="800">2</text>
+    <text x="80" y="39" fill="#FFFFFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="800">Branch and Bound</text>
+    <text x="80" y="66" fill="#C8C2D6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">BFS, DFS, least-cost</text>
+    <path d="M20 91 H235" stroke="#352947"/>
+    <text x="20" y="124" fill="#A78BFA" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700">C++17</text>
+    <text x="20" y="153" fill="#E7E2F4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Example optimum: 30</text>
+    <text x="20" y="181" fill="#22C55E" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800">PASS</text>
+  </g>
+
+  <g transform="translate(610 155)" filter="url(#shadow)">
+    <rect width="255" height="205" rx="14" fill="#181225" stroke="#4C3B68"/>
+    <rect x="20" y="20" width="46" height="46" rx="10" fill="#2D1B4E"/>
+    <text x="43" y="50" text-anchor="middle" fill="#C4B5FD" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="800">3</text>
+    <text x="80" y="39" fill="#FFFFFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="800">Simulated Annealing</text>
+    <text x="80" y="66" fill="#C8C2D6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Generated + TSP + ATSP</text>
+    <path d="M20 91 H235" stroke="#352947"/>
+    <text x="20" y="124" fill="#A78BFA" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700">C++20</text>
+    <text x="20" y="153" fill="#E7E2F4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">3 smoke instances</text>
+    <text x="20" y="181" fill="#22C55E" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800">PASS</text>
+  </g>
+
+  <g transform="translate(885 155)" filter="url(#shadow)">
+    <rect width="255" height="205" rx="14" fill="#181225" stroke="#4C3B68"/>
+    <rect x="20" y="20" width="46" height="46" rx="10" fill="#2D1B4E"/>
+    <text x="43" y="50" text-anchor="middle" fill="#C4B5FD" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="800">4</text>
+    <text x="80" y="39" fill="#FFFFFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="800">Genetic Algorithm</text>
+    <text x="80" y="66" fill="#C8C2D6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">OX + mutation + local search</text>
+    <path d="M20 91 H235" stroke="#352947"/>
+    <text x="20" y="124" fill="#A78BFA" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700">C++17</text>
+    <text x="20" y="153" fill="#E7E2F4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">SYM + ATSP + VLSI</text>
+    <text x="20" y="181" fill="#22C55E" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800">PASS</text>
+  </g>
+
+  <text x="60" y="435" fill="#E7E2F4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700">Verification command</text>
+  <rect x="60" y="455" width="1080" height="38" rx="8" fill="#0F0B18" stroke="#3E3155"/>
+  <text x="84" y="480" fill="#A78BFA" font-family="SFMono-Regular,Consolas,monospace" font-size="16">make smoke</text>
+  <text x="210" y="480" fill="#C8C2D6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">builds and runs all four C++ stages with lightweight configs</text>
+</svg>
+
