@@ -133,8 +133,6 @@ tsp-algorithms-benchmark/
 
 - [Project documentation in Polish](docs/PROJECT_DOCUMENTATION_PL.md)
 - [Testing documentation in Polish](docs/TESTING_PL.md)
-- [GitHub publishing checklist in Polish](docs/GITHUB_PUBLISHING_PL.md)
-- [Academic reports](docs/reports/)
 
 ## Future Improvements
 
