@@ -142,8 +142,3 @@ tsp-algorithms-benchmark/
 - Normalize the input loader into a shared library.
 - Add GitHub Actions for C++ builds and smoke tests.
 - Export all benchmark summaries into one combined dashboard.
-
-## Author
-
-**Robert Tworek**  
-Technical Computer Science student focused on practical algorithm experiments, software projects and technical documentation.
