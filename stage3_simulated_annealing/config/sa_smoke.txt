@@ -1,0 +1,20 @@
+# Fast C++ smoke test for Stage 3 / Simulated Annealing.
+
+input_paths=data/generated/sym_n6_01.txt,data/tsplib/berlin52.tsp,data/tsplib_atsp/br17.atsp
+reference_csv=data/reference/best_known.csv
+output_csv=results/sa_smoke_results.csv
+summary_csv=results/sa_smoke_summary.csv
+seed=12345
+repetitions=1
+max_iterations=3000
+time_limit_ms=80
+initial_temperature=1500.0
+minimum_temperature=0.001
+cooling_rate=0.995
+iterations_per_temperature=40
+initial_solution=nearest_neighbor
+neighborhood=two_opt
+use_held_karp_reference=true
+held_karp_max_n=16
+verbose=false
+

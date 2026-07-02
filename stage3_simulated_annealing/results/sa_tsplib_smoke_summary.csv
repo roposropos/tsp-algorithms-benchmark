@@ -1,0 +1,8 @@
+n,graph_type,source_kind,instance_count,run_count,avg_time_ms,avg_relative_error_percent,avg_improvement_percent
+51,symmetric,tsplib,1,1,7.880042,13.145540,0.000000
+52,symmetric,tsplib,1,1,8.281625,8.472554,0.000000
+70,symmetric,tsplib,1,1,9.987459,17.925926,0.000000
+76,symmetric,tsplib,1,1,9.662917,13.011152,0.000000
+100,symmetric,tsplib,2,2,9.962250,17.589405,0.000000
+127,symmetric,tsplib,1,1,9.176958,13.182056,0.058976
+130,symmetric,tsplib,1,1,9.688417,16.677578,0.000000

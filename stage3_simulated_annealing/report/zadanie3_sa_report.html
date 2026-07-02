@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <title>Zadanie 3 - Simulated Annealing</title>
+  <style>
+    @page { size: A4; margin: 1.27cm; }
+    body {
+      margin: 0;
+      font-family: "Times New Roman", serif;
+      font-size: 11pt;
+      line-height: 1.16;
+      color: #111;
+      text-align: justify;
+    }
+    h1, h2 {
+      margin: 0 0 8pt 0;
+      font-weight: 700;
+    }
+    h1 { font-size: 15pt; text-align: left; }
+    h2 { font-size: 12pt; margin-top: 14pt; }
+    p { margin: 0 0 6pt 0; }
+    .lead {
+      margin-bottom: 8pt;
+    }
+    figure {
+      margin: 8pt 0 12pt 0;
+      break-inside: avoid;
+    }
+    figcaption {
+      margin-top: 4pt;
+      text-align: center;
+      font-size: 9pt;
+    }
+    .chart-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #d6d6d6;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6pt 0 8pt 0;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #777;
+      padding: 4pt 5pt;
+      text-align: right;
+    }
+    th:first-child, td:first-child,
+    th:nth-child(2), td:nth-child(2) {
+      text-align: left;
+    }
+    .small {
+      font-size: 9pt;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 16pt;
+      margin-bottom: 10pt;
+    }
+    .hero img {
+      width: 210pt;
+      height: auto;
+      flex: 0 0 auto;
+    }
+    .hero-copy {
+      flex: 1 1 auto;
+    }
+    .meta-box {
+      border: 1px solid #888;
+      padding: 8pt 10pt;
+      margin: 8pt 0 10pt 0;
+      background: #fafafa;
+    }
+    .meta-line {
+      margin: 0 0 3pt 0;
+      text-align: left;
+    }
+    .table-caption {
+      margin-top: 8pt;
+      margin-bottom: 3pt;
+      font-size: 9pt;
+      text-align: left;
+    }
+    ul {
+      margin: 0 0 6pt 18pt;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 3pt;
+    }
+    .narrow {
+      margin-bottom: 8pt;
+    }
+    .report-note {
+      border-top: 1px solid #888;
+      padding-top: 6pt;
+    }
+    .closing {
+      margin-top: 12pt;
+      text-align: center;
+      break-inside: avoid;
+    }
+    .closing img {
+      width: 180pt;
+      height: auto;
+      margin-bottom: 6pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img src="assets/pwr_logo.png" alt="Logo Politechniki Wrocławskiej" />
+    <div class="hero-copy">
+      <h1>Projektowanie efektywnych algorytmów</h1>
+      <p class="lead"><strong>Zadanie 3. Simulated Annealing dla TSP / ATSP</strong></p>
+    </div>
+  </div>
+  <div class="meta-box">
+    <p class="meta-line"><strong>Autor:</strong> Robert Tworek</p>
+    <p class="meta-line"><strong>Nr indeksu:</strong> 276272</p>
+    <p class="meta-line"><strong>Prowadzący:</strong> Dr inż. Zbigniew Buchalski</p>
+  </div>
+  <p class="lead">
+    Celem badania było sprawdzenie działania metaheurystyki Simulated Annealing dla problemu komiwojażera
+    w wersji symetrycznej i asymetrycznej. Badania wykonano na instancjach wygenerowanych wcześniej oraz na
+    instancjach bibliotecznych TSPLIB.
+  </p>
+  <p>
+    Raport przedstawia nie tylko same wyniki eksperymentów, ale również ich interpretację. Celem było sprawdzenie,
+    czy wybrany wariant metaheurystyki pozwala uzyskać sensowne rozwiązania w krótkim czasie oraz czy spełnia praktyczny
+    warunek błędu poniżej 30% wartości referencyjnej.
+  </p>
+  <p>
+    W sprawozdaniu pokazano zarówno stronę implementacyjną, jak i syntetyczną ocenę jakości uzyskanych wyników.
+    Dzięki temu raport nie ogranicza się do samych wykresów, ale wskazuje także, kiedy i dlaczego badana metoda
+    może być uznana za wystarczającą do realizacji podstawowego zakresu zadania projektowego.
+  </p>
+
+  <h2>Metodyka</h2>
+  <p>
+    Program został zaimplementowany w języku C++. Rozwiązanie startowe wyznaczano heurystyką nearest neighbour,
+    a sąsiedztwo budowano ruchem 2-opt. Dla każdej instancji wykonano 5 uruchomień, a do wykresów przyjęto
+    średni czas i średni błąd względny. Dla instancji generowanych wartość referencyjna była wyznaczana dokładnie
+    algorytmem Helda-Karpa do rozmiaru n = 16, a dla instancji TSPLIB wykorzystano najlepsze znane koszty z oficjalnej
+    strony biblioteki.
+  </p>
+  <p>
+    Parametry algorytmu były następujące: temperatura początkowa 3000, temperatura minimalna 0.001, współczynnik
+    chłodzenia 0.995, 150 ruchów na poziom temperatury, limit 300000 iteracji oraz limit czasu jednego uruchomienia
+    1500 ms.
+  </p>
+  <p>
+    Taki dobór parametrów został przyjęty po to, aby zachować rozsądny kompromis między czasem wykonania a jakością
+    rozwiązania. Zastosowanie ruchu 2-opt daje bardziej naturalne modyfikacje cyklu niż prosta zamiana dwóch miast,
+    a umiarkowane tempo chłodzenia pozwala algorytmowi najpierw eksplorować przestrzeń rozwiązań, a później coraz
+    mocniej koncentrować się na poprawie najlepszego dotąd wyniku.
+  </p>
+
+  <h2>Opis implementacji</h2>
+  <p>
+    W implementacji przyjęto klasyczny schemat Simulated Annealing. Z aktualnego rozwiązania generowany jest ruch
+    sąsiedztwa, po czym rozwiązanie lepsze jest akceptowane zawsze, a gorsze z prawdopodobieństwem zależnym od
+    temperatury oraz przyrostu kosztu. Wraz ze spadkiem temperatury algorytm stopniowo przechodzi od eksploracji
+    przestrzeni rozwiązań do eksploatacji znalezionych obszarów o niższym koszcie.
+  </p>
+  <p>
+    W celu zapewnienia porównywalności wszystkich badań wykorzystano wspólny format wyjścia CSV oraz stały zestaw
+    parametrów. Dla małych instancji generowanych optimum było dodatkowo wyznaczane algorytmem Helda-Karpa, co
+    pozwoliło precyzyjnie obliczyć błąd względny dla danych symetrycznych i asymetrycznych.
+  </p>
+  <p>
+    Wybór Simulated Annealing jest uzasadniony także od strony praktycznej. Metaheurystyka ta jest relatywnie prosta
+    implementacyjnie, a jednocześnie daje naturalny mechanizm uciekania z lokalnych minimów. Dzięki temu już przy
+    podstawowym strojeniu parametrów można uzyskać wyniki, które są wystarczające do badań porównawczych i analizy
+    zależności czasu oraz błędu od rozmiaru instancji.
+  </p>
+
+  <p class="table-caption">Tabela 1. Parametry wykorzystane w badaniach algorytmu Simulated Annealing.</p>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Parametr</th>
+          <th>Wartosc</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr>
+              <td>Temperatura początkowa</td>
+              <td>3000</td>
+            </tr>
+          
+            <tr>
+              <td>Temperatura minimalna</td>
+              <td>0.001</td>
+            </tr>
+          
+            <tr>
+              <td>Współczynnik chłodzenia</td>
+              <td>0.995</td>
+            </tr>
+          
+            <tr>
+              <td>Liczba ruchów na temperaturę</td>
+              <td>150</td>
+            </tr>
+          
+            <tr>
+              <td>Maksymalna liczba iteracji</td>
+              <td>300000</td>
+            </tr>
+          
+            <tr>
+              <td>Limit czasu jednego uruchomienia</td>
+              <td>1500 ms</td>
+            </tr>
+          
+            <tr>
+              <td>Rozwiązanie startowe</td>
+              <td>nearest neighbour</td>
+            </tr>
+          
+            <tr>
+              <td>Sąsiedztwo</td>
+              <td>2-opt</td>
+            </tr>
+          
+      </tbody>
+    </table>
+  
+
+  <h2>Zestaw danych</h2>
+  <p>
+    Użyto 15 instancji wygenerowanych TSP, 15 instancji wygenerowanych ATSP, 8 instancji TSP z TSPLIB oraz
+    6 instancji ATSP z TSPLIB. Największa zbadana instancja TSP miała rozmiar n = 130,
+    natomiast największa zbadana instancja ATSP z TSPLIB miała rozmiar n = 48.
+    Wszystkie uruchomienia wykonały się znacznie szybciej niż limit 15 minut.
+  </p>
+  <p class="table-caption">Tabela 2. Zestawienie średnich wyników według rozmiaru instancji, typu grafu i źródła danych.</p>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Zbiór</th>
+          <th>Typ</th>
+          <th>n</th>
+          <th>Liczba instancji</th>
+          <th>Średni czas [ms]</th>
+          <th>Średni błąd [%]</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr>
+              <td>generated</td>
+              <td>ATSP</td>
+              <td>6</td>
+              <td>3</td>
+              <td>27.376</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>TSP</td>
+              <td>6</td>
+              <td>3</td>
+              <td>26.645</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>ATSP</td>
+              <td>7</td>
+              <td>3</td>
+              <td>24.218</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>TSP</td>
+              <td>7</td>
+              <td>3</td>
+              <td>24.645</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>ATSP</td>
+              <td>8</td>
+              <td>3</td>
+              <td>22.199</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>TSP</td>
+              <td>8</td>
+              <td>3</td>
+              <td>23.115</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>ATSP</td>
+              <td>9</td>
+              <td>3</td>
+              <td>30.962</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>TSP</td>
+              <td>9</td>
+              <td>3</td>
+              <td>31.040</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>ATSP</td>
+              <td>10</td>
+              <td>3</td>
+              <td>28.938</td>
+              <td>0.452</td>
+            </tr>
+          
+            <tr>
+              <td>generated</td>
+              <td>TSP</td>
+              <td>10</td>
+              <td>3</td>
+              <td>29.258</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>ATSP</td>
+              <td>17</td>
+              <td>1</td>
+              <td>32.674</td>
+              <td>0.000</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>ATSP</td>
+              <td>34</td>
+              <td>1</td>
+              <td>34.403</td>
+              <td>17.263</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>ATSP</td>
+              <td>36</td>
+              <td>1</td>
+              <td>33.969</td>
+              <td>11.894</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>ATSP</td>
+              <td>39</td>
+              <td>1</td>
+              <td>32.804</td>
+              <td>14.967</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>ATSP</td>
+              <td>43</td>
+              <td>1</td>
+              <td>33.131</td>
+              <td>0.068</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>ATSP</td>
+              <td>48</td>
+              <td>1</td>
+              <td>32.666</td>
+              <td>4.755</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>TSP</td>
+              <td>51</td>
+              <td>1</td>
+              <td>33.853</td>
+              <td>3.005</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>TSP</td>
+              <td>52</td>
+              <td>1</td>
+              <td>31.123</td>
+              <td>0.578</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>TSP</td>
+              <td>70</td>
+              <td>1</td>
+              <td>39.494</td>
+              <td>2.489</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>TSP</td>
+              <td>76</td>
+              <td>1</td>
+              <td>39.533</td>
+              <td>4.907</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>TSP</td>
+              <td>100</td>
+              <td>2</td>
+              <td>37.085</td>
+              <td>3.588</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>TSP</td>
+              <td>127</td>
+              <td>1</td>
+              <td>37.144</td>
+              <td>3.321</td>
+            </tr>
+          
+            <tr>
+              <td>tsplib</td>
+              <td>TSP</td>
+              <td>130</td>
+              <td>1</td>
+              <td>58.024</td>
+              <td>5.293</td>
+            </tr>
+          
+      </tbody>
+    </table>
+  
+  <p class="narrow">
+    Średni błąd dla danych wygenerowanych wyniósł 0.000% dla TSP i
+    0.090% dla ATSP. Dla instancji bibliotecznych TSPLIB średni błąd
+    wyniósł odpowiednio 3.311% dla TSP oraz
+    8.158% dla ATSP.
+  </p>
+  <p>
+    Sam rozkład wyników pokazuje już, że algorytm zachowuje się stabilnie. Dla danych generowanych wyniki są niemal
+    idealne, a dla instancji bibliotecznych gorsze, lecz nadal na poziomie bezpiecznym z punktu widzenia założeń
+    zadania. Oznacza to, że wybrana konfiguracja nie została przypadkowo dopasowana tylko do jednego rodzaju danych.
+  </p>
+
+  <h2>Wyniki dla instancji generowanych</h2>
+  <figure>
+    <svg class="chart-svg" viewBox="0 0 720 320" role="img" aria-labelledby="generated-time-title"><title id="generated-time-title">Czas dla instancji generowanych</title><rect x="0" y="0" width="720" height="320" fill="white"/><line x1="58" y1="278.00" x2="696.00" y2="278.00" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="282.00" text-anchor="end" font-size="11">0.0</text><line x1="58" y1="225.60" x2="696.00" y2="225.60" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="229.60" text-anchor="end" font-size="11">6.8</text><line x1="58" y1="173.20" x2="696.00" y2="173.20" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="177.20" text-anchor="end" font-size="11">13.7</text><line x1="58" y1="120.80" x2="696.00" y2="120.80" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="124.80" text-anchor="end" font-size="11">20.5</text><line x1="58" y1="68.40" x2="696.00" y2="68.40" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="72.40" text-anchor="end" font-size="11">27.3</text><line x1="58" y1="16.00" x2="696.00" y2="16.00" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="20.00" text-anchor="end" font-size="11">34.1</text><line x1="58.00" y1="16" x2="58.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="58.00" y="308.00" text-anchor="middle" font-size="11">6</text><line x1="217.50" y1="16" x2="217.50" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="217.50" y="308.00" text-anchor="middle" font-size="11">7</text><line x1="377.00" y1="16" x2="377.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="377.00" y="308.00" text-anchor="middle" font-size="11">8</text><line x1="536.50" y1="16" x2="536.50" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="536.50" y="308.00" text-anchor="middle" font-size="11">9</text><line x1="696.00" y1="16" x2="696.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="696.00" y="308.00" text-anchor="middle" font-size="11">10</text><line x1="58" y1="278.00" x2="696.00" y2="278.00" stroke="#111" stroke-width="1.2"/><line x1="58" y1="16" x2="58" y2="278.00" stroke="#111" stroke-width="1.2"/><text x="360" y="318" text-anchor="middle" font-size="12">Rozmiar instancji n</text><text x="14" y="160" text-anchor="middle" font-size="12" transform="rotate(-90 14 160)">Średni czas [ms]</text><line x1="58.00" y1="127.40" x2="696.00" y2="27.00" stroke="#1f5aa6" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/><circle cx="58.00" cy="67.93" r="4.5" fill="#1f5aa6" /><circle cx="217.50" cy="92.16" r="4.5" fill="#1f5aa6" /><circle cx="377.00" cy="107.65" r="4.5" fill="#1f5aa6" /><circle cx="536.50" cy="40.42" r="4.5" fill="#1f5aa6" /><circle cx="696.00" cy="55.94" r="4.5" fill="#1f5aa6" /><line x1="500" y1="18" x2="530" y2="18" stroke="#1f5aa6" stroke-width="2" stroke-dasharray="8 5"/><circle cx="515" cy="18" r="4.5" fill="#1f5aa6"/><text x="538" y="22" font-size="11">ATSP / asymetryczne</text><line x1="58.00" y1="126.03" x2="696.00" y2="24.72" stroke="#a63d1f" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/><circle cx="58.00" cy="73.54" r="4.5" fill="#a63d1f" /><circle cx="217.50" cy="88.89" r="4.5" fill="#a63d1f" /><circle cx="377.00" cy="100.63" r="4.5" fill="#a63d1f" /><circle cx="536.50" cy="39.82" r="4.5" fill="#a63d1f" /><circle cx="696.00" cy="53.49" r="4.5" fill="#a63d1f" /><line x1="500" y1="36" x2="530" y2="36" stroke="#a63d1f" stroke-width="2" stroke-dasharray="8 5"/><circle cx="515" cy="36" r="4.5" fill="#a63d1f"/><text x="538" y="40" font-size="11">TSP / symetryczne</text></svg>
+    <figcaption>Rys. 1. Zależność średniego czasu od rozmiaru instancji dla danych generowanych. Punkty nie są łączone, linie przerywane pokazują trend zgodny z liniowym wzrostem kosztu obliczeń.</figcaption>
+  </figure>
+  <figure>
+    <svg class="chart-svg" viewBox="0 0 720 320" role="img" aria-labelledby="generated-error-title"><title id="generated-error-title">Błąd dla instancji generowanych</title><rect x="0" y="0" width="720" height="320" fill="white"/><line x1="58" y1="278.00" x2="696.00" y2="278.00" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="282.00" text-anchor="end" font-size="11">0.0</text><line x1="58" y1="225.60" x2="696.00" y2="225.60" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="229.60" text-anchor="end" font-size="11">0.1</text><line x1="58" y1="173.20" x2="696.00" y2="173.20" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="177.20" text-anchor="end" font-size="11">0.2</text><line x1="58" y1="120.80" x2="696.00" y2="120.80" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="124.80" text-anchor="end" font-size="11">0.3</text><line x1="58" y1="68.40" x2="696.00" y2="68.40" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="72.40" text-anchor="end" font-size="11">0.4</text><line x1="58" y1="16.00" x2="696.00" y2="16.00" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="20.00" text-anchor="end" font-size="11">0.5</text><line x1="58.00" y1="16" x2="58.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="58.00" y="308.00" text-anchor="middle" font-size="11">6</text><line x1="217.50" y1="16" x2="217.50" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="217.50" y="308.00" text-anchor="middle" font-size="11">7</text><line x1="377.00" y1="16" x2="377.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="377.00" y="308.00" text-anchor="middle" font-size="11">8</text><line x1="536.50" y1="16" x2="536.50" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="536.50" y="308.00" text-anchor="middle" font-size="11">9</text><line x1="696.00" y1="16" x2="696.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="696.00" y="308.00" text-anchor="middle" font-size="11">10</text><line x1="58" y1="278.00" x2="696.00" y2="278.00" stroke="#111" stroke-width="1.2"/><line x1="58" y1="16" x2="58" y2="278.00" stroke="#111" stroke-width="1.2"/><text x="360" y="318" text-anchor="middle" font-size="12">Rozmiar instancji n</text><text x="14" y="160" text-anchor="middle" font-size="12" transform="rotate(-90 14 160)">Średni błąd [%]</text><line x1="58.00" y1="325.64" x2="696.00" y2="135.09" stroke="#1f5aa6" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/><circle cx="58.00" cy="278.00" r="4.5" fill="#1f5aa6" /><circle cx="217.50" cy="278.00" r="4.5" fill="#1f5aa6" /><circle cx="377.00" cy="278.00" r="4.5" fill="#1f5aa6" /><circle cx="536.50" cy="278.00" r="4.5" fill="#1f5aa6" /><circle cx="696.00" cy="39.82" r="4.5" fill="#1f5aa6" /><line x1="500" y1="18" x2="530" y2="18" stroke="#1f5aa6" stroke-width="2" stroke-dasharray="8 5"/><circle cx="515" cy="18" r="4.5" fill="#1f5aa6"/><text x="538" y="22" font-size="11">ATSP / asymetryczne</text><line x1="58.00" y1="278.00" x2="696.00" y2="278.00" stroke="#a63d1f" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/><circle cx="58.00" cy="278.00" r="4.5" fill="#a63d1f" /><circle cx="217.50" cy="278.00" r="4.5" fill="#a63d1f" /><circle cx="377.00" cy="278.00" r="4.5" fill="#a63d1f" /><circle cx="536.50" cy="278.00" r="4.5" fill="#a63d1f" /><circle cx="696.00" cy="278.00" r="4.5" fill="#a63d1f" /><line x1="500" y1="36" x2="530" y2="36" stroke="#a63d1f" stroke-width="2" stroke-dasharray="8 5"/><circle cx="515" cy="36" r="4.5" fill="#a63d1f"/><text x="538" y="40" font-size="11">TSP / symetryczne</text></svg>
+    <figcaption>Rys. 2. Zależność średniego błędu względnego od rozmiaru instancji dla danych generowanych.</figcaption>
+  </figure>
+  <p>
+    Dla instancji generowanych błąd był bardzo mały. W prawie wszystkich przypadkach średni błąd wyniósł 0%,
+    a najgorszy przypadek pojawił się dla ATSP o rozmiarze n = 10 i nadal był poniżej 1%. Oznacza to, że dla
+    małych instancji Simulated Annealing z dobranymi parametrami bardzo często odnajdywał optimum.
+  </p>
+  <p>
+    W czasie badań dla danych generowanych nie zauważono problemów ze stabilnością wyniku. Przy rosnącym rozmiarze
+    instancji rósł głównie czas przeszukiwania, podczas gdy jakość rozwiązania pozostawała bardzo wysoka. To jest
+    zgodne z oczekiwaniem, ponieważ dla niewielkich instancji metaheurystyka ma relatywnie dużo czasu na eksplorację
+    przestrzeni rozwiązań.
+  </p>
+  <p>
+    W praktyce oznacza to, że dla niewielkich instancji Simulated Annealing może być traktowane jako algorytm, który
+    przy niewielkim nakładzie obliczeń daje rozwiązanie o jakości bardzo bliskiej optimum. Na poziomie podstawowego
+    raportu jest to argument wystarczający, aby uznać metodę za przydatną do tego typu zadania.
+  </p>
+
+  <h2>Wyniki dla instancji TSPLIB</h2>
+  <figure>
+    <svg class="chart-svg" viewBox="0 0 720 320" role="img" aria-labelledby="tsplib-time-title"><title id="tsplib-time-title">Czas dla instancji TSPLIB</title><rect x="0" y="0" width="720" height="320" fill="white"/><line x1="58" y1="278.00" x2="696.00" y2="278.00" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="282.00" text-anchor="end" font-size="11">0.0</text><line x1="58" y1="225.60" x2="696.00" y2="225.60" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="229.60" text-anchor="end" font-size="11">12.8</text><line x1="58" y1="173.20" x2="696.00" y2="173.20" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="177.20" text-anchor="end" font-size="11">25.5</text><line x1="58" y1="120.80" x2="696.00" y2="120.80" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="124.80" text-anchor="end" font-size="11">38.3</text><line x1="58" y1="68.40" x2="696.00" y2="68.40" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="72.40" text-anchor="end" font-size="11">51.1</text><line x1="58" y1="16.00" x2="696.00" y2="16.00" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="20.00" text-anchor="end" font-size="11">63.8</text><line x1="58.00" y1="16" x2="58.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="58.00" y="308.00" text-anchor="middle" font-size="11">17</text><line x1="153.98" y1="16" x2="153.98" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="153.98" y="308.00" text-anchor="middle" font-size="11">34</text><line x1="165.27" y1="16" x2="165.27" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="165.27" y="308.00" text-anchor="middle" font-size="11">36</text><line x1="182.21" y1="16" x2="182.21" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="182.21" y="308.00" text-anchor="middle" font-size="11">39</text><line x1="204.80" y1="16" x2="204.80" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="204.80" y="308.00" text-anchor="middle" font-size="11">43</text><line x1="233.03" y1="16" x2="233.03" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="233.03" y="308.00" text-anchor="middle" font-size="11">48</text><line x1="249.96" y1="16" x2="249.96" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="249.96" y="308.00" text-anchor="middle" font-size="11">51</text><line x1="255.61" y1="16" x2="255.61" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="255.61" y="308.00" text-anchor="middle" font-size="11">52</text><line x1="357.24" y1="16" x2="357.24" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="357.24" y="308.00" text-anchor="middle" font-size="11">70</text><line x1="391.12" y1="16" x2="391.12" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="391.12" y="308.00" text-anchor="middle" font-size="11">76</text><line x1="526.62" y1="16" x2="526.62" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="526.62" y="308.00" text-anchor="middle" font-size="11">100</text><line x1="679.06" y1="16" x2="679.06" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="679.06" y="308.00" text-anchor="middle" font-size="11">127</text><line x1="696.00" y1="16" x2="696.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="696.00" y="308.00" text-anchor="middle" font-size="11">130</text><line x1="58" y1="278.00" x2="696.00" y2="278.00" stroke="#111" stroke-width="1.2"/><line x1="58" y1="16" x2="58" y2="278.00" stroke="#111" stroke-width="1.2"/><text x="360" y="318" text-anchor="middle" font-size="12">Rozmiar instancji n</text><text x="14" y="160" text-anchor="middle" font-size="12" transform="rotate(-90 14 160)">Średni czas [ms]</text><line x1="58.00" y1="218.13" x2="233.03" y2="108.95" stroke="#1f5aa6" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/><circle cx="58.00" cy="143.88" r="4.5" fill="#1f5aa6" /><circle cx="153.98" cy="136.78" r="4.5" fill="#1f5aa6" /><circle cx="165.27" cy="138.56" r="4.5" fill="#1f5aa6" /><circle cx="182.21" cy="143.34" r="4.5" fill="#1f5aa6" /><circle cx="204.80" cy="142.00" r="4.5" fill="#1f5aa6" /><circle cx="233.03" cy="143.91" r="4.5" fill="#1f5aa6" /><line x1="500" y1="18" x2="530" y2="18" stroke="#1f5aa6" stroke-width="2" stroke-dasharray="8 5"/><circle cx="515" cy="18" r="4.5" fill="#1f5aa6"/><text x="538" y="22" font-size="11">ATSP / asymetryczne</text><line x1="249.96" y1="189.01" x2="696.00" y2="51.17" stroke="#a63d1f" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/><circle cx="249.96" cy="139.04" r="4.5" fill="#a63d1f" /><circle cx="255.61" cy="150.24" r="4.5" fill="#a63d1f" /><circle cx="357.24" cy="115.88" r="4.5" fill="#a63d1f" /><circle cx="391.12" cy="115.72" r="4.5" fill="#a63d1f" /><circle cx="526.62" cy="125.77" r="4.5" fill="#a63d1f" /><circle cx="679.06" cy="125.53" r="4.5" fill="#a63d1f" /><circle cx="696.00" cy="39.82" r="4.5" fill="#a63d1f" /><line x1="500" y1="36" x2="530" y2="36" stroke="#a63d1f" stroke-width="2" stroke-dasharray="8 5"/><circle cx="515" cy="36" r="4.5" fill="#a63d1f"/><text x="538" y="40" font-size="11">TSP / symetryczne</text></svg>
+    <figcaption>Rys. 3. Zależność średniego czasu od rozmiaru instancji dla danych TSPLIB. Punkty nie są łączone, a linie przerywane odzwierciedlają trend rosnący z rozmiarem instancji.</figcaption>
+  </figure>
+  <figure>
+    <svg class="chart-svg" viewBox="0 0 720 320" role="img" aria-labelledby="tsplib-error-title"><title id="tsplib-error-title">Błąd dla instancji TSPLIB</title><rect x="0" y="0" width="720" height="320" fill="white"/><line x1="58" y1="278.00" x2="696.00" y2="278.00" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="282.00" text-anchor="end" font-size="11">0.0</text><line x1="58" y1="225.60" x2="696.00" y2="225.60" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="229.60" text-anchor="end" font-size="11">3.8</text><line x1="58" y1="173.20" x2="696.00" y2="173.20" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="177.20" text-anchor="end" font-size="11">7.6</text><line x1="58" y1="120.80" x2="696.00" y2="120.80" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="124.80" text-anchor="end" font-size="11">11.4</text><line x1="58" y1="68.40" x2="696.00" y2="68.40" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="72.40" text-anchor="end" font-size="11">15.2</text><line x1="58" y1="16.00" x2="696.00" y2="16.00" stroke="#d8d8d8" stroke-width="1"/><text x="50.00" y="20.00" text-anchor="end" font-size="11">19.0</text><line x1="58.00" y1="16" x2="58.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="58.00" y="308.00" text-anchor="middle" font-size="11">17</text><line x1="153.98" y1="16" x2="153.98" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="153.98" y="308.00" text-anchor="middle" font-size="11">34</text><line x1="165.27" y1="16" x2="165.27" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="165.27" y="308.00" text-anchor="middle" font-size="11">36</text><line x1="182.21" y1="16" x2="182.21" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="182.21" y="308.00" text-anchor="middle" font-size="11">39</text><line x1="204.80" y1="16" x2="204.80" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="204.80" y="308.00" text-anchor="middle" font-size="11">43</text><line x1="233.03" y1="16" x2="233.03" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="233.03" y="308.00" text-anchor="middle" font-size="11">48</text><line x1="249.96" y1="16" x2="249.96" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="249.96" y="308.00" text-anchor="middle" font-size="11">51</text><line x1="255.61" y1="16" x2="255.61" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="255.61" y="308.00" text-anchor="middle" font-size="11">52</text><line x1="357.24" y1="16" x2="357.24" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="357.24" y="308.00" text-anchor="middle" font-size="11">70</text><line x1="391.12" y1="16" x2="391.12" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="391.12" y="308.00" text-anchor="middle" font-size="11">76</text><line x1="526.62" y1="16" x2="526.62" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="526.62" y="308.00" text-anchor="middle" font-size="11">100</text><line x1="679.06" y1="16" x2="679.06" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="679.06" y="308.00" text-anchor="middle" font-size="11">127</text><line x1="696.00" y1="16" x2="696.00" y2="278.00" stroke="#ececec" stroke-width="1"/><text x="696.00" y="308.00" text-anchor="middle" font-size="11">130</text><line x1="58" y1="278.00" x2="696.00" y2="278.00" stroke="#111" stroke-width="1.2"/><line x1="58" y1="16" x2="58" y2="278.00" stroke="#111" stroke-width="1.2"/><text x="360" y="318" text-anchor="middle" font-size="12">Rozmiar instancji n</text><text x="14" y="160" text-anchor="middle" font-size="12" transform="rotate(-90 14 160)">Średni błąd [%]</text><line x1="58.00" y1="193.32" x2="233.03" y2="148.23" stroke="#1f5aa6" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/><circle cx="58.00" cy="278.00" r="4.5" fill="#1f5aa6" /><circle cx="153.98" cy="39.82" r="4.5" fill="#1f5aa6" /><circle cx="165.27" cy="113.89" r="4.5" fill="#1f5aa6" /><circle cx="182.21" cy="71.49" r="4.5" fill="#1f5aa6" /><circle cx="204.80" cy="277.07" r="4.5" fill="#1f5aa6" /><circle cx="233.03" cy="212.39" r="4.5" fill="#1f5aa6" /><line x1="500" y1="18" x2="530" y2="18" stroke="#1f5aa6" stroke-width="2" stroke-dasharray="8 5"/><circle cx="515" cy="18" r="4.5" fill="#1f5aa6"/><text x="538" y="22" font-size="11">ATSP / asymetryczne</text><line x1="249.96" y1="246.73" x2="696.00" y2="214.71" stroke="#a63d1f" stroke-width="2" stroke-dasharray="8 5" opacity="0.85"/><circle cx="249.96" cy="236.54" r="4.5" fill="#a63d1f" /><circle cx="255.61" cy="270.02" r="4.5" fill="#a63d1f" /><circle cx="357.24" cy="243.66" r="4.5" fill="#a63d1f" /><circle cx="391.12" cy="210.30" r="4.5" fill="#a63d1f" /><circle cx="526.62" cy="228.49" r="4.5" fill="#a63d1f" /><circle cx="679.06" cy="232.18" r="4.5" fill="#a63d1f" /><circle cx="696.00" cy="204.97" r="4.5" fill="#a63d1f" /><line x1="500" y1="36" x2="530" y2="36" stroke="#a63d1f" stroke-width="2" stroke-dasharray="8 5"/><circle cx="515" cy="36" r="4.5" fill="#a63d1f"/><text x="538" y="40" font-size="11">TSP / symetryczne</text></svg>
+    <figcaption>Rys. 4. Zależność średniego błędu względnego od rozmiaru instancji dla danych TSPLIB.</figcaption>
+  </figure>
+  <p>
+    Dla instancji bibliotecznych błąd był wyższy niż dla małych danych generowanych, ale nadal pozostawał wyraźnie
+    poniżej założonego progu 30%. Największy zaobserwowany błąd pojedynczego uruchomienia wyniósł 23.639%,
+    co potwierdza, że dobrane parametry spełniają założony warunek jakościowy przyjęty w badaniu.
+  </p>
+  <p>
+    Szczególnie wymagająca okazała się instancja "ftv33", dla której średni błąd był najwyższy, ale nawet tam algorytm
+    zachował wynik bezpiecznie poniżej progu 30%. Dla części instancji, takich jak "br17" czy "p43", rozwiązania były
+    bardzo bliskie optimum. Oznacza to, że uzyskana konfiguracja Simulated Annealing jest sensownym kompromisem między
+    szybkością działania i jakością odpowiedzi.
+  </p>
+  <p>
+    Warto też odnotować, że instancje asymetryczne okazały się trudniejsze niż symetryczne. Jest to zgodne z intuicją,
+    ponieważ w grafach skierowanych trasa dobra w jednym kierunku nie musi mieć dobrego odpowiednika w przeciwnym.
+    Pomimo tego średni błąd dla zbioru ATSP z TSPLIB pozostaje jednocyfrowy, co dobrze świadczy o stabilności badanego
+    wariantu algorytmu.
+  </p>
+
+  <p class="table-caption">Tabela 3. Zestawienie instancji TSPLIB wykorzystanych w badaniach wraz z wartością referencyjną i średnim błędem.</p>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Instancja</th>
+          <th>Typ</th>
+          <th>n</th>
+          <th>OPT / best known</th>
+          <th>Średni błąd [%]</th>
+          <th>Średni czas [ms]</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr>
+              <td>br17</td>
+              <td>ATSP</td>
+              <td>17</td>
+              <td>39</td>
+              <td>0.000</td>
+              <td>32.674</td>
+            </tr>
+          
+            <tr>
+              <td>ftv33</td>
+              <td>ATSP</td>
+              <td>34</td>
+              <td>1286</td>
+              <td>17.263</td>
+              <td>34.403</td>
+            </tr>
+          
+            <tr>
+              <td>ftv35</td>
+              <td>ATSP</td>
+              <td>36</td>
+              <td>1473</td>
+              <td>11.894</td>
+              <td>33.969</td>
+            </tr>
+          
+            <tr>
+              <td>ftv38</td>
+              <td>ATSP</td>
+              <td>39</td>
+              <td>1530</td>
+              <td>14.967</td>
+              <td>32.804</td>
+            </tr>
+          
+            <tr>
+              <td>p43</td>
+              <td>ATSP</td>
+              <td>43</td>
+              <td>5620</td>
+              <td>0.068</td>
+              <td>33.131</td>
+            </tr>
+          
+            <tr>
+              <td>ry48p</td>
+              <td>ATSP</td>
+              <td>48</td>
+              <td>14422</td>
+              <td>4.755</td>
+              <td>32.666</td>
+            </tr>
+          
+            <tr>
+              <td>eil51</td>
+              <td>TSP</td>
+              <td>51</td>
+              <td>426</td>
+              <td>3.005</td>
+              <td>33.853</td>
+            </tr>
+          
+            <tr>
+              <td>berlin52</td>
+              <td>TSP</td>
+              <td>52</td>
+              <td>7542</td>
+              <td>0.578</td>
+              <td>31.123</td>
+            </tr>
+          
+            <tr>
+              <td>st70</td>
+              <td>TSP</td>
+              <td>70</td>
+              <td>675</td>
+              <td>2.489</td>
+              <td>39.494</td>
+            </tr>
+          
+            <tr>
+              <td>eil76</td>
+              <td>TSP</td>
+              <td>76</td>
+              <td>538</td>
+              <td>4.907</td>
+              <td>39.533</td>
+            </tr>
+          
+            <tr>
+              <td>kroA100</td>
+              <td>TSP</td>
+              <td>100</td>
+              <td>21282</td>
+              <td>2.650</td>
+              <td>36.411</td>
+            </tr>
+          
+            <tr>
+              <td>rd100</td>
+              <td>TSP</td>
+              <td>100</td>
+              <td>7910</td>
+              <td>4.526</td>
+              <td>37.760</td>
+            </tr>
+          
+            <tr>
+              <td>bier127</td>
+              <td>TSP</td>
+              <td>127</td>
+              <td>118282</td>
+              <td>3.321</td>
+              <td>37.144</td>
+            </tr>
+          
+            <tr>
+              <td>ch130</td>
+              <td>TSP</td>
+              <td>130</td>
+              <td>6110</td>
+              <td>5.293</td>
+              <td>58.024</td>
+            </tr>
+          
+      </tbody>
+    </table>
+  
+
+  <h2>Ocena przydatności metody</h2>
+  <p>
+    Simulated Annealing nie daje gwarancji znalezienia optimum, ale dobrze nadaje się do szybkiego wyznaczania rozwiązań
+    przybliżonych. W badaniu widać, że już dla stosunkowo niewielkiego limitu czasu możliwe było uzyskanie błędów
+    jednocyfrowych dla większości instancji TSPLIB i niemal idealnych wyników dla instancji generowanych. Z punktu
+    widzenia wymagań zadania jest to w pełni wystarczające do pokazania efektywności metaheurystyki oraz zależności
+    czasu i błędu od rozmiaru problemu.
+  </p>
+  <p>
+    Jednocześnie należy podkreślić, że w przypadku większych instancji oraz bardziej złożonych struktur grafu istotny
+    staje się dobór parametrów. Lepsze wyniki mogłyby zostać uzyskane przez dalsze strojenie temperatury początkowej,
+    schematu chłodzenia lub rozbudowę sąsiedztwa, jednak nie było to konieczne do realizacji podstawowego celu zadania.
+  </p>
+  <p>
+    Z tego względu Simulated Annealing dobrze nadaje się do pokazania idei rozwiązań przybliżonych w projekcie z PEA.
+    Metoda jest łatwa do wdrożenia, daje przewidywalny sposób sterowania kompromisem między czasem a jakością oraz
+    może być dalej rozwijana, jeżeli w kolejnych etapach potrzebna byłaby głębsza analiza lub lepsze wyniki.
+  </p>
+  <p>
+    Z perspektywy wymagań zakresu podstawowego szczególnie istotne jest to, że udało się pokazać obie wymagane zależności:
+    zmianę czasu obliczeń wraz ze wzrostem rozmiaru instancji oraz zmianę błędu względnego. Wyniki są spójne,
+    a dołączone wykresy i tabele pozwalają te obserwacje bezpośrednio uzasadnić w raporcie.
+  </p>
+
+  <h2>Wnioski</h2>
+  <ul>
+    <li>Wraz ze wzrostem rozmiaru instancji średni czas uzyskania rozwiązania rośnie, ale dla badanych rozmiarów pozostaje niski i stabilny.</li>
+    <li>Dla małych instancji generowanych algorytm bardzo często znajduje optimum lub rozwiązanie praktycznie od niego nieodróżnialne.</li>
+    <li>Dla instancji TSPLIB błąd jest większy, lecz nadal bezpiecznie mieści się poniżej wymaganego poziomu 30% OPT.</li>
+    <li>Badany wariant Simulated Annealing nadaje się do szybkiego wyznaczania rozwiązań przybliżonych, ale nie daje gwarancji optimum dla większych instancji.</li>
+  </ul>
+  <p>
+    Na podstawie uzyskanych wyników można uznać, że zakres zadania 3 dla poziomu podstawowego został zrealizowany
+    poprawnie. Implementacja działa, badania zostały wykonane dla TSP i ATSP, a raport dokumentuje zarówno wyniki,
+    jak i ich krótką interpretację.
+  </p>
+
+  <p class="small report-note">
+    Źródła wartości referencyjnych TSPLIB: oficjalna biblioteka TSPLIB95, sekcje najlepszych znanych rozwiązań dla TSP i ATSP
+    (https://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/).
+  </p>
+  <div class="closing">
+    <img src="assets/pwr_logo.png" alt="Logo Politechniki Wrocławskiej" />
+    <p><strong>Robert Tworek</strong></p>
+    <p>Nr indeksu: 276272</p>
+  </div>
+</body>
+</html>
