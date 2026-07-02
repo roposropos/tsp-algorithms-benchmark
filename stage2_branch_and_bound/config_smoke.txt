@@ -1,0 +1,10 @@
+# Fast C++ smoke test for Stage 2.
+
+instance=example_matrix.txt
+mode=lc
+start_city=0
+time_limit_s=5
+use_nn_ub=false
+save_csv=false
+csv_path=smoke_result_task2.csv
+

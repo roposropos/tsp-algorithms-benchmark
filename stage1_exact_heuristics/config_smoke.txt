@@ -1,0 +1,13 @@
+# Fast C++ smoke test for Stage 1.
+# Runs tiny generated instances through exact and heuristic algorithms.
+
+mode=generated
+sizes=6,7
+instances_per_size=1
+algorithms=bruteforce,nn,rnn
+timeout_seconds=1
+weight_low=1
+weight_high=100
+output=smoke_results.csv
+seed=12345
+

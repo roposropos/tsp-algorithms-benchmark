@@ -1,0 +1,55 @@
+instance_name,instance_path,n,mode,best_cost,time_ms,expanded_nodes,generated_nodes,pruned_by_bound,pruned_infeasible,completed_tours,max_open_size,timed_out,optimality_proven,initial_upper_bound,initial_upper_bound_method,lower_bound_method,best_path
+metric_n06_01,instances_metric/metric_n06_01.txt,6,bfs,2500,0.166,215,326,111,0,9,120,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 1 -> 5 -> 4 -> 3 -> 0
+metric_n06_01,instances_metric/metric_n06_01.txt,6,dfs,2500,0.074,93,175,82,0,8,11,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 4 -> 5 -> 1 -> 2 -> 0
+metric_n06_01,instances_metric/metric_n06_01.txt,6,lc,2500,0.113,66,146,80,0,1,81,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 4 -> 5 -> 1 -> 2 -> 0
+metric_n06_02,instances_metric/metric_n06_02.txt,6,bfs,1875,0.130,213,326,113,0,7,120,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 1 -> 2 -> 4 -> 5 -> 0
+metric_n06_02,instances_metric/metric_n06_02.txt,6,dfs,1875,0.060,33,77,44,0,3,11,False,True,,infinity,simple_admissible_min_outgoing,0 -> 5 -> 4 -> 2 -> 1 -> 3 -> 0
+metric_n06_02,instances_metric/metric_n06_02.txt,6,lc,1875,0.070,28,74,46,0,1,47,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 1 -> 2 -> 4 -> 5 -> 0
+metric_n06_03,instances_metric/metric_n06_03.txt,6,bfs,2796,0.153,211,326,115,0,5,120,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 1 -> 3 -> 5 -> 4 -> 0
+metric_n06_03,instances_metric/metric_n06_03.txt,6,dfs,2796,0.033,50,112,62,0,3,11,False,True,,infinity,simple_admissible_min_outgoing,0 -> 4 -> 5 -> 3 -> 1 -> 2 -> 0
+metric_n06_03,instances_metric/metric_n06_03.txt,6,lc,2796,0.053,37,93,56,0,1,57,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 1 -> 3 -> 5 -> 4 -> 0
+metric_n07_01,instances_metric/metric_n07_01.txt,7,bfs,2276,1.035,1246,1957,711,0,9,720,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 1 -> 4 -> 6 -> 3 -> 5 -> 0
+metric_n07_01,instances_metric/metric_n07_01.txt,7,dfs,2276,0.308,193,433,240,0,11,16,False,True,,infinity,simple_admissible_min_outgoing,0 -> 5 -> 3 -> 6 -> 4 -> 1 -> 2 -> 0
+metric_n07_01,instances_metric/metric_n07_01.txt,7,lc,2276,0.319,134,351,217,0,1,218,False,True,,infinity,simple_admissible_min_outgoing,0 -> 5 -> 3 -> 6 -> 4 -> 1 -> 2 -> 0
+metric_n07_02,instances_metric/metric_n07_02.txt,7,bfs,2580,0.833,1245,1957,712,0,8,720,False,True,,infinity,simple_admissible_min_outgoing,0 -> 1 -> 4 -> 3 -> 6 -> 5 -> 2 -> 0
+metric_n07_02,instances_metric/metric_n07_02.txt,7,dfs,2580,0.154,138,369,231,0,6,16,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 5 -> 6 -> 3 -> 4 -> 1 -> 0
+metric_n07_02,instances_metric/metric_n07_02.txt,7,lc,2580,0.251,109,313,204,0,1,205,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 5 -> 6 -> 3 -> 4 -> 1 -> 0
+metric_n07_03,instances_metric/metric_n07_03.txt,7,bfs,2534,0.793,1246,1957,711,0,9,720,False,True,,infinity,simple_admissible_min_outgoing,0 -> 5 -> 2 -> 1 -> 4 -> 3 -> 6 -> 0
+metric_n07_03,instances_metric/metric_n07_03.txt,7,dfs,2534,0.166,194,427,233,0,9,16,False,True,,infinity,simple_admissible_min_outgoing,0 -> 6 -> 3 -> 4 -> 1 -> 2 -> 5 -> 0
+metric_n07_03,instances_metric/metric_n07_03.txt,7,lc,2534,0.276,142,368,226,0,1,227,False,True,,infinity,simple_admissible_min_outgoing,0 -> 5 -> 2 -> 1 -> 4 -> 3 -> 6 -> 0
+metric_n08_01,instances_metric/metric_n08_01.txt,8,bfs,3233,5.741,8679,13700,5021,0,19,5040,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 3 -> 7 -> 5 -> 1 -> 6 -> 4 -> 0
+metric_n08_01,instances_metric/metric_n08_01.txt,8,dfs,3233,1.059,941,2505,1564,0,15,22,False,True,,infinity,simple_admissible_min_outgoing,0 -> 4 -> 6 -> 1 -> 5 -> 7 -> 3 -> 2 -> 0
+metric_n08_01,instances_metric/metric_n08_01.txt,8,lc,3233,1.336,483,1502,1019,0,1,1020,False,True,,infinity,simple_admissible_min_outgoing,0 -> 4 -> 6 -> 1 -> 5 -> 7 -> 3 -> 2 -> 0
+metric_n08_02,instances_metric/metric_n08_02.txt,8,bfs,2791,5.982,8671,13700,5029,0,11,5040,False,True,,infinity,simple_admissible_min_outgoing,0 -> 1 -> 6 -> 4 -> 2 -> 7 -> 3 -> 5 -> 0
+metric_n08_02,instances_metric/metric_n08_02.txt,8,dfs,2791,2.139,2535,5532,2997,0,10,22,False,True,,infinity,simple_admissible_min_outgoing,0 -> 5 -> 3 -> 7 -> 2 -> 4 -> 6 -> 1 -> 0
+metric_n08_02,instances_metric/metric_n08_02.txt,8,lc,2791,4.453,2192,5007,2815,0,1,2816,False,True,,infinity,simple_admissible_min_outgoing,0 -> 1 -> 6 -> 4 -> 2 -> 7 -> 3 -> 5 -> 0
+metric_n08_03,instances_metric/metric_n08_03.txt,8,bfs,2502,5.402,8675,13700,5025,0,15,5040,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 2 -> 4 -> 6 -> 1 -> 5 -> 7 -> 0
+metric_n08_03,instances_metric/metric_n08_03.txt,8,dfs,2502,0.432,361,1082,721,0,9,22,False,True,,infinity,simple_admissible_min_outgoing,0 -> 7 -> 5 -> 1 -> 6 -> 4 -> 2 -> 3 -> 0
+metric_n08_03,instances_metric/metric_n08_03.txt,8,lc,2502,0.758,278,936,658,0,1,659,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 2 -> 4 -> 6 -> 1 -> 5 -> 7 -> 0
+metric_n09_01,instances_metric/metric_n09_01.txt,9,bfs,2864,47.248,69301,109601,40300,0,20,40320,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 1 -> 4 -> 5 -> 2 -> 8 -> 7 -> 6 -> 0
+metric_n09_01,instances_metric/metric_n09_01.txt,9,dfs,2864,1.185,801,2607,1806,0,10,29,False,True,,infinity,simple_admissible_min_outgoing,0 -> 6 -> 7 -> 8 -> 2 -> 5 -> 4 -> 1 -> 3 -> 0
+metric_n09_01,instances_metric/metric_n09_01.txt,9,lc,2864,0.713,177,757,580,0,1,581,False,True,,infinity,simple_admissible_min_outgoing,0 -> 6 -> 7 -> 8 -> 2 -> 5 -> 4 -> 1 -> 3 -> 0
+metric_n09_02,instances_metric/metric_n09_02.txt,9,bfs,3136,45.712,69295,109601,40306,0,14,40320,False,True,,infinity,simple_admissible_min_outgoing,0 -> 4 -> 8 -> 5 -> 3 -> 2 -> 7 -> 1 -> 6 -> 0
+metric_n09_02,instances_metric/metric_n09_02.txt,9,dfs,3136,2.273,1647,5161,3514,0,27,29,False,True,,infinity,simple_admissible_min_outgoing,0 -> 6 -> 1 -> 7 -> 2 -> 3 -> 5 -> 8 -> 4 -> 0
+metric_n09_02,instances_metric/metric_n09_02.txt,9,lc,3136,1.936,494,1980,1486,0,1,1487,False,True,,infinity,simple_admissible_min_outgoing,0 -> 4 -> 8 -> 5 -> 3 -> 2 -> 7 -> 1 -> 6 -> 0
+metric_n09_03,instances_metric/metric_n09_03.txt,9,bfs,2650,48.724,69295,109601,40306,0,14,40320,False,True,,infinity,simple_admissible_min_outgoing,0 -> 5 -> 4 -> 3 -> 6 -> 1 -> 7 -> 2 -> 8 -> 0
+metric_n09_03,instances_metric/metric_n09_03.txt,9,dfs,2650,0.763,546,1705,1159,0,11,29,False,True,,infinity,simple_admissible_min_outgoing,0 -> 8 -> 2 -> 7 -> 1 -> 6 -> 3 -> 4 -> 5 -> 0
+metric_n09_03,instances_metric/metric_n09_03.txt,9,lc,2650,0.904,253,985,732,0,1,733,False,True,,infinity,simple_admissible_min_outgoing,0 -> 8 -> 2 -> 7 -> 1 -> 6 -> 3 -> 4 -> 5 -> 0
+metric_n10_01,instances_metric/metric_n10_01.txt,10,bfs,3267,601.840,623557,986410,362853,0,27,362880,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 5 -> 4 -> 1 -> 6 -> 8 -> 9 -> 3 -> 7 -> 0
+metric_n10_01,instances_metric/metric_n10_01.txt,10,dfs,3267,45.356,47135,125240,78105,0,24,37,False,True,,infinity,simple_admissible_min_outgoing,0 -> 7 -> 3 -> 9 -> 8 -> 6 -> 1 -> 4 -> 5 -> 2 -> 0
+metric_n10_01,instances_metric/metric_n10_01.txt,10,lc,3267,288.916,40953,112196,71243,0,1,71244,False,True,,infinity,simple_admissible_min_outgoing,0 -> 7 -> 3 -> 9 -> 8 -> 6 -> 1 -> 4 -> 5 -> 2 -> 0
+metric_n10_02,instances_metric/metric_n10_02.txt,10,bfs,2591,783.869,623556,986410,362854,0,26,362880,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 9 -> 4 -> 5 -> 6 -> 7 -> 8 -> 1 -> 3 -> 0
+metric_n10_02,instances_metric/metric_n10_02.txt,10,dfs,2591,9.922,6635,22261,15626,0,23,37,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 1 -> 8 -> 7 -> 6 -> 5 -> 4 -> 9 -> 2 -> 0
+metric_n10_02,instances_metric/metric_n10_02.txt,10,lc,2591,17.479,3695,13771,10076,0,1,10077,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 1 -> 8 -> 7 -> 6 -> 5 -> 4 -> 9 -> 2 -> 0
+metric_n10_03,instances_metric/metric_n10_03.txt,10,bfs,2997,445.208,623571,986410,362839,0,41,362880,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 7 -> 5 -> 8 -> 1 -> 6 -> 2 -> 9 -> 4 -> 0
+metric_n10_03,instances_metric/metric_n10_03.txt,10,dfs,2997,12.251,9785,32229,22444,0,26,37,False,True,,infinity,simple_admissible_min_outgoing,0 -> 4 -> 9 -> 2 -> 6 -> 1 -> 8 -> 5 -> 7 -> 3 -> 0
+metric_n10_03,instances_metric/metric_n10_03.txt,10,lc,2997,31.290,7024,24898,17874,0,1,17875,False,True,,infinity,simple_admissible_min_outgoing,0 -> 4 -> 9 -> 2 -> 6 -> 1 -> 8 -> 5 -> 7 -> 3 -> 0
+metric_n11_01,instances_metric/metric_n11_01.txt,11,bfs,,5000.001,6020801,9649601,0,0,0,3628800,True,False,,infinity,simple_admissible_min_outgoing,-
+metric_n11_01,instances_metric/metric_n11_01.txt,11,dfs,2740,91.712,74426,255102,180676,0,23,46,False,True,,infinity,simple_admissible_min_outgoing,0 -> 7 -> 6 -> 4 -> 5 -> 8 -> 9 -> 10 -> 2 -> 1 -> 3 -> 0
+metric_n11_01,instances_metric/metric_n11_01.txt,11,lc,2740,311.014,56751,193385,136634,0,1,136635,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 1 -> 2 -> 10 -> 9 -> 8 -> 5 -> 4 -> 6 -> 7 -> 0
+metric_n11_02,instances_metric/metric_n11_02.txt,11,bfs,3213,4896.011,6235349,9864101,3628752,0,48,3628800,False,True,,infinity,simple_admissible_min_outgoing,0 -> 2 -> 7 -> 3 -> 10 -> 6 -> 9 -> 1 -> 4 -> 5 -> 8 -> 0
+metric_n11_02,instances_metric/metric_n11_02.txt,11,dfs,3213,52.460,41959,156630,114671,0,32,46,False,True,,infinity,simple_admissible_min_outgoing,0 -> 8 -> 5 -> 4 -> 1 -> 9 -> 6 -> 10 -> 3 -> 7 -> 2 -> 0
+metric_n11_02,instances_metric/metric_n11_02.txt,11,lc,3213,153.817,30191,117276,87085,0,1,87086,False,True,,infinity,simple_admissible_min_outgoing,0 -> 8 -> 5 -> 4 -> 1 -> 9 -> 6 -> 10 -> 3 -> 7 -> 2 -> 0
+metric_n11_03,instances_metric/metric_n11_03.txt,11,bfs,3142,5000.000,6235323,9864101,376106,0,22,3628800,True,False,,infinity,simple_admissible_min_outgoing,0 -> 1 -> 5 -> 10 -> 7 -> 8 -> 6 -> 9 -> 2 -> 4 -> 3 -> 0
+metric_n11_03,instances_metric/metric_n11_03.txt,11,dfs,3049,11.069,6342,27090,20748,0,24,46,False,True,,infinity,simple_admissible_min_outgoing,0 -> 5 -> 1 -> 10 -> 7 -> 8 -> 6 -> 9 -> 2 -> 4 -> 3 -> 0
+metric_n11_03,instances_metric/metric_n11_03.txt,11,lc,3049,11.061,2446,12715,10269,0,1,10270,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 4 -> 2 -> 9 -> 6 -> 8 -> 7 -> 10 -> 1 -> 5 -> 0

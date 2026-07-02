@@ -1,0 +1,2 @@
+instance_name,instance_path,n,mode,best_cost,time_ms,expanded_nodes,generated_nodes,pruned_by_bound,pruned_infeasible,completed_tours,max_open_size,timed_out,optimality_proven,initial_upper_bound,initial_upper_bound_method,lower_bound_method,best_path
+example_matrix,example_matrix.txt,5,lc,30,0.024,12,22,10,0,1,11,False,True,,infinity,simple_admissible_min_outgoing,0 -> 3 -> 4 -> 1 -> 2 -> 0
