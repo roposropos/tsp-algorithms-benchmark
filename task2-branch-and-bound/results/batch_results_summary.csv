@@ -1,4 +1,0 @@
-mode,runs,avg_time_ms,avg_expanded_nodes,avg_generated_nodes,avg_pruned_by_bound,avg_completed_tours,avg_max_open_size,timeouts,optimality_proven_count,best_cost_min,best_cost_max
-bfs,18,1306.179,186145.722,430639.833,68167.000,13.000,244506.778,3,15,1875,3267
-dfs,18,102.155,10767.444,35485.389,24717.944,15.222,26.833,0,18,1875,3267
-lc,18,176.132,8080.722,27041.833,18961.111,1.000,18962.111,0,18,1875,3267

@@ -1,2 +1,0 @@
-instance_name,n,mode,best_cost,time_ms,expanded_nodes,generated_nodes,pruned_by_bound,pruned_infeasible,completed_tours,max_open_size,timed_out,optimality_proven,initial_upper_bound,initial_upper_bound_method,lower_bound_method,best_path
-example_matrix,5,lc,30,0.087,9,19,10,0,0,4,False,True,30,nearest_neighbor_best_start,simple_admissible_min_outgoing,"1 -> 2 -> 0 -> 3 -> 4 -> 1"

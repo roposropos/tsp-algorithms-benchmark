@@ -1,4 +1,0 @@
-# Każda linia = jedna instancja
-# Ścieżki dopasuj do swoich plików
-
-example_matrix.txt
